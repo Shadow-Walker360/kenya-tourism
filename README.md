@@ -1,74 +1,55 @@
 #!/usr/bin/env bash
 # README.sh - Fancy interactive README for Shadow-Walker360/kenya-tourism
-# Save as README.sh, then: chmod +x README.sh && ./README.sh
-# Optional: ./README.sh --generate-md to create README.md in the current directory
+# chmod +x README.sh && ./README.sh
+# or generate Markdown: ./README.sh --generate-md
 
 set -euo pipefail
 IFS=$'\n\t'
 
-# Repo info
 REPO_URL="https://github.com/Shadow-Walker360/kenya-tourism"
 PROJECT_NAME="kenya-tourism"
 OWNER="Shadow-Walker360"
+LIVE_URL="https://shadow-walker360.github.io/kenya-tourism/"
 
-# Colors (fallback to safe ANSI if tput missing)
+# Colors (fallback-safe)
 if command -v tput >/dev/null 2>&1; then
-  bold="$(tput bold)"
-  reset="$(tput sgr0)"
-  red="$(tput setaf 1)"
-  green="$(tput setaf 2)"
-  yellow="$(tput setaf 3)"
-  blue="$(tput setaf 4)"
-  magenta="$(tput setaf 5)"
-  cyan="$(tput setaf 6)"
+  bold=$(tput bold); reset=$(tput sgr0)
+  red=$(tput setaf 1); green=$(tput setaf 2)
+  yellow=$(tput setaf 3); blue=$(tput setaf 4)
+  magenta=$(tput setaf 5); cyan=$(tput setaf 6)
 else
-  bold="\e[1m"
-  reset="\e[0m"
-  red="\e[31m"
-  green="\e[32m"
-  yellow="\e[33m"
-  blue="\e[34m"
-  magenta="\e[35m"
-  cyan="\e[36m"
+  bold="\033[1m"; reset="\033[0m"
+  red="\033[31m"; green="\033[32m"; yellow="\033[33m"
+  blue="\033[34m"; magenta="\033[35m"; cyan="\033[36m"
 fi
 
-# Small helper to print a horizontal rule sized to terminal
-hr() {
-  local width=${1:-$(tput cols 2>/dev/null || echo 80)}
-  printf '%*s\n' "$width" '' | tr ' ' '-'
-}
+hr() { printf '%*s\n' "${1:-80}" '' | tr ' ' '-'; }
 
-# ASCII art header (safe fallback)
 print_header() {
+  clear || true
   cat <<EOF
 ${bold}${cyan}
-   _  __                  _        _______                 _             
-  | |/ / ___  _ __  _   _| | __   |__   __|               | |            
-  | ' / / _ \| '_ \| | | | |/ /     _| | ___  ___ _ __ ___| | ___  _ __  
-  | . \| (_) | | | | |_| |   <     | | |/ _ \/ __| '__/ _ \ |/ _ \| '_ \ 
-  |_|\_\\___/|_| |_|\__,_|_|\_\    |_|_|  __/\__ \ | |  __/ | (_) | | | |
-                                 ______|___/|___/_|  \___|_|\___/|_| |_|
+██╗  ██╗███████╗███╗   ██╗██╗   ██╗ █████╗     ████████╗ ██████╗ ██╗   ██╗██████╗ ██╗███████╗
+██║ ██╔╝██╔════╝████╗  ██║██║   ██║██╔══██╗    ╚══██╔══╝██╔═══██╗██║   ██║██╔══██╗██║██╔════╝
+█████╔╝ █████╗  ██╔██╗ ██║██║   ██║███████║       ██║   ██║   ██║██║   ██║██████╔╝██║███████╗
+██╔═██╗ ██╔══╝  ██║╚██╗██║██║   ██║██╔══██║       ██║   ██║   ██║██║   ██║██╔══██╗██║╚════██║
+██║  ██╗███████╗██║ ╚████║╚██████╔╝██║  ██║       ██║   ╚██████╔╝╚██████╔╝██║  ██║██║███████║
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝╚══════╝
 ${reset}
-${bold}${yellow}A friendly interactive README for:${reset} ${magenta}${OWNER}/${PROJECT_NAME}${reset}
-${bold}${blue}Repository:${reset} ${REPO_URL}
+${bold}${yellow}Project:${reset} ${magenta}${PROJECT_NAME}${reset}
+${bold}${yellow}Repository:${reset} ${blue}${REPO_URL}${reset}
+${bold}${yellow}Live Demo:${reset} ${green}${LIVE_URL}${reset}
 EOF
   hr
 }
-## 🌍 Live Demo
-[![Live Demo](https://img.shields.io/badge/Explore%20Kenya%20Now-%F0%9F%9A%80-orange?style=for-the-badge)](https://shadow-walker360.github.io/kenya-tourism/)
-> Click above to explore the live experience — powered by passion, pixels, and pure Kenyan magic 🇰🇪✨
 
 about() {
   cat <<EOF
 
-${bold}About${reset}
-This project showcases tourism features and examples focused on Kenya — destinations, guides, maps,
-and sample content to help developers and travelers explore and contribute.
-
-${bold}Why a fancy README script?${reset}
-- Terminal-first: great for developers working in terminals and remote systems
-- Interactive: quickly explore sections without scrolling
-- Reproducible: export a ready-to-use README.md file
+${bold}🌍 About${reset}
+Kenya Tourism is a vibrant digital showcase of Kenya 🇰🇪 — 
+built purely with HTML, CSS, and JS to highlight destinations, 
+heritage, and culture in a visually stunning and fast-loading format.
 
 EOF
 }
@@ -76,12 +57,12 @@ EOF
 features() {
   cat <<EOF
 
-${bold}Features${reset}
-- Beautiful terminal presentation with colors and ASCII art
-- Interactive menu for quick navigation
-- Quickstart clone, install, and run snippets
-- One-command README.md generation
-- Contribution and license guidance
+${bold}✨ Features${reset}
+- Fully static front-end (no frameworks)
+- Responsive modern layout
+- Lightweight and offline-friendly
+- Hosted via GitHub Pages
+- Interactive Bash-powered README
 
 EOF
 }
@@ -89,43 +70,18 @@ EOF
 quickstart() {
   cat <<EOF
 
-${bold}Quickstart${reset}
-Clone the repo:
+${bold}⚡ Quickstart${reset}
+Clone this project:
   ${green}git clone ${REPO_URL}${reset}
-
-Enter the repo:
   ${green}cd ${PROJECT_NAME}${reset}
 
-Common steps (pick the one that fits your stack):
+Open locally:
+  ${green}open index.html${reset}
+  or
+  ${green}python3 -m http.server${reset}
 
-- If this is a web project (Node.js):
-  ${green}npm install${reset}
-  ${green}npm start${reset}
-
-- If it uses Python:
-  ${green}python3 -m venv .venv
-  ${green}source .venv/bin/activate
-  ${green}pip install -r requirements.txt${reset}
-
-- If built as static site:
-  ${green}open index.html${reset} (or serve with a simple HTTP server)
-
-Note: These commands are generic. Check project-specific files (package.json, requirements.txt, etc.) for exact instructions.
-EOF
-}
-
-usage_examples() {
-  cat <<EOF
-
-${bold}Usage Examples${reset}
-- Run the interactive demo (if provided):
-  ${green}bash demo.sh${reset}
-
-- Build or test:
-  ${green}make build${reset} or ${green}npm run build${reset}
-
-- Export the README from this script:
-  ${green}./README.sh --generate-md${reset}
+View the live hosted version:
+  ${cyan}${LIVE_URL}${reset}
 
 EOF
 }
@@ -133,28 +89,13 @@ EOF
 contributing() {
   cat <<EOF
 
-${bold}Contributing${reset}
-We welcome contributions! Typical workflow:
-1) Fork the repo
-2) Create a feature branch: ${green}git checkout -b feature/my-change${reset}
-3) Commit and push: ${green}git commit -am "Add feature" && git push origin feature/my-change${reset}
-4) Open a Pull Request against ${OWNER}/${PROJECT_NAME}
-
-Please include:
-- A clear description of your change
-- Screenshots or demos if visual
-- Tests where appropriate
-
-EOF
-}
-
-license() {
-  cat <<EOF
-
-${bold}License${reset}
-This repository does not include a license file by default in this script.
-Add a LICENSE (e.g., MIT) to clarify permissions. Example:
-  ${green}curl -o LICENSE https://opensource.org/licenses/MIT${reset}
+${bold}🤝 Contributing${reset}
+We welcome all creatives, developers, and dreamers.  
+1️⃣ Fork the repo  
+2️⃣ Create a branch: ${green}git checkout -b feature/amazing-addition${reset}  
+3️⃣ Commit your work: ${green}git commit -m "Add new feature"${reset}  
+4️⃣ Push: ${green}git push origin feature/amazing-addition${reset}  
+5️⃣ Open a Pull Request 🌍  
 
 EOF
 }
@@ -162,82 +103,80 @@ EOF
 generate_md() {
   local out="${1:-README.md}"
   {
-    echo "# ${PROJECT_NAME}"
+    echo "# 🇰🇪 Kenya Tourism"
     echo
-    echo "_Interactive README generated by README.sh_"
+    echo "[![Live Demo](https://img.shields.io/badge/Visit%20Live%20Site-%F0%9F%9A%80-orange?style=for-the-badge)](${LIVE_URL})"
     echo
-    echo "Repository: ${REPO_URL}"
+    echo "### A digital showcase of Kenya built with HTML, CSS, and JS."
     echo
-    echo "## About"
-    echo "This project showcases tourism features and examples focused on Kenya — destinations, guides, maps, and sample content to help developers and travelers explore and contribute."
+    echo "![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)"
+    echo "![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)"
+    echo "![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)"
     echo
-    echo "## Quickstart"
+    echo "[![GitHub stars](https://img.shields.io/github/stars/${OWNER}/${PROJECT_NAME}?style=social)](${REPO_URL}/stargazers)"
+    echo "[![GitHub forks](https://img.shields.io/github/forks/${OWNER}/${PROJECT_NAME}?style=social)](${REPO_URL}/network/members)"
+    echo "[![GitHub last commit](https://img.shields.io/github/last-commit/${OWNER}/${PROJECT_NAME}?style=flat-square)](${REPO_URL}/commits/main)"
+    echo
+    echo "## 🌍 About"
+    echo "Kenya Tourism is a clean and responsive static site designed to promote Kenyan travel destinations."
+    echo
+    echo "## ✨ Features"
+    echo "- Static HTML/CSS/JS build"
+    echo "- Responsive design and imagery"
+    echo "- Hosted via GitHub Pages"
+    echo "- Minimal dependencies, instant load"
+    echo
+    echo "## ⚡ Quickstart"
     echo '```bash'
     echo "git clone ${REPO_URL}"
     echo "cd ${PROJECT_NAME}"
+    echo "open index.html"
     echo '```'
     echo
-    echo "## Usage Examples"
-    echo "- Run demos, build or test depending on project stack."
+    echo "## 🤝 Contributing"
+    echo "Fork → Branch → Commit → Push → Pull Request"
     echo
-    echo "## Contributing"
-    echo "Fork, branch, commit, push, and open a PR. Include clear description and tests if applicable."
+    echo "## 🚀 Live Site"
+    echo "${LIVE_URL}"
     echo
-    echo "## License"
-    echo "Add a LICENSE file (e.g., MIT) to clarify permissions."
+    echo "---"
+    echo "_Built with ❤️ by [${OWNER}](${REPO_URL})_"
   } > "${out}"
-  printf "${green}Generated ${out}${reset}\n"
+  printf "${green}✅ Successfully generated ${out}${reset}\n"
 }
 
 menu() {
   cat <<EOF
 
-${bold}Menu${reset}
+${bold}📘 MENU${reset}
 1) About
 2) Features
 3) Quickstart
-4) Usage Examples
-5) Contributing
-6) License
-7) Export README.md
-8) Open repository in default browser
-9) Exit
+4) Contributing
+5) Export README.md
+6) Exit
 
 EOF
-}
-
-open_repo() {
-  if command -v xdg-open >/dev/null 2>&1; then
-    xdg-open "${REPO_URL}" >/dev/null 2>&1 || true
-  elif command -v open >/dev/null 2>&1; then
-    open "${REPO_URL}" >/dev/null 2>&1 || true
-  else
-    printf "%s\n" "${yellow}No browser open command found. Visit: ${REPO_URL}${reset}"
-  fi
 }
 
 interactive() {
   print_header
   while true; do
     menu
-    read -rp "Select an option (1-9): " choice || exit 0
+    read -rp "Select option (1-6): " choice || exit 0
     hr
     case "${choice}" in
       1) about ;;
       2) features ;;
       3) quickstart ;;
-      4) usage_examples ;;
-      5) contributing ;;
-      6) license ;;
-      7)
+      4) contributing ;;
+      5)
          read -rp "Output filename (default README.md): " fname
          fname=${fname:-README.md}
          generate_md "${fname}"
          ;;
-      8) open_repo ;;
-      9) echo "Bye 👋"; exit 0 ;;
-      *)
-         echo "${red}Invalid choice.${reset}" ;;
+      6) echo "👋 Asante! Safari njema 🌄"; exit 0 ;;
+      *) echo "${red}Invalid choice.${reset}" ;;
     esac
     hr
     read -rp "Press Enter to return to menu..." _ || true
@@ -245,35 +184,6 @@ interactive() {
   done
 }
 
-print_help() {
-  cat <<EOF
-README.sh - Fancy interactive README for ${OWNER}/${PROJECT_NAME}
+[[ "${1:-}" == "--generate-md" ]] && { generate_md "${2:-README.md}"; exit 0; }
 
-Usage:
-  ./README.sh            # Launch interactive terminal README
-  ./README.sh --generate-md [FILENAME]  # Create README.md (default name README.md)
-  ./README.sh --help     # Show this help
-
-Examples:
-  ./README.sh --generate-md
-  ./README.sh --generate-md PROJECT_README.md
-
-EOF
-}
-
-# CLI argument parsing (very simple)
-if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
-  print_help
-  exit 0
-fi
-
-if [[ "${1:-}" == "--generate-md" ]]; then
-  out="${2:-README.md}"
-  generate_md "${out}"
-  exit 0
-fi
-
-# Default: interactive mode
 interactive
-
-# End of script
