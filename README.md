@@ -54,6 +54,9 @@ ${bold}${blue}Repository:${reset} ${REPO_URL}
 EOF
   hr
 }
+## 🌍 Live Demo
+[![Live Demo](https://img.shields.io/badge/Explore%20Kenya%20Now-%F0%9F%9A%80-orange?style=for-the-badge)](https://shadow-walker360.github.io/kenya-tourism/)
+> Click above to explore the live experience — powered by passion, pixels, and pure Kenyan magic 🇰🇪✨
 
 about() {
   cat <<EOF
