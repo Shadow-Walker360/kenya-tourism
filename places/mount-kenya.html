@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mount Kenya - The Sacred Peak of Africa</title>
+  <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+</head>
+<body>
+  <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1603349206295-42d6fddab944?auto=format&fit=crop&w=1400&q=80');">
+    <div class="overlay"></div>
+    <h1>Mount Kenya</h1>
+    <p>The Sacred Peak of Africa</p>
+  </header>
+
+  <section class="intro">
+    <h2>Welcome to Mount Kenya</h2>
+    <p>
+      Rising to <strong>5,199 meters</strong> (17,057 ft), <strong>Mount Kenya</strong> is Africa’s second-highest mountain and the pride of the nation.  
+      Revered by the Kikuyu people as the home of God (*Ngai*), its snow-capped peaks pierce the clouds, feeding rivers and nurturing life across Kenya.  
+      It’s not just a mountain — it’s a living symbol of strength, heritage, and timeless beauty.
+    </p>
+    <p>
+      The slopes of Mount Kenya are home to dense forests, glittering lakes, bamboo thickets, and alpine meadows where elephants roam under a cathedral of stars.  
+      Whether you’re here to climb, hike, or simply breathe the sacred air, Mount Kenya is a journey of the soul.
+    </p>
+  </section>
+
+  <section class="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="photo-grid">
+      <img src="https://images.unsplash.com/photo-1626704212135-482366a10edb?auto=format&fit=crop&w=800&q=80" alt="Mount Kenya peak" />
+      <img src="https://images.unsplash.com/photo-1548266652-99cf27701ced?auto=format&fit=crop&w=800&q=80" alt="Mount Kenya sunrise" />
+      <img src="https://images.unsplash.com/photo-1582578573143-3b6fbc96c2a7?auto=format&fit=crop&w=800&q=80" alt="Hiking trail" />
+      <img src="https://images.unsplash.com/photo-1590481770323-6d7d96cbb94e?auto=format&fit=crop&w=800&q=80" alt="Wildlife on Mount Kenya slopes" />
+      <img src="https://images.unsplash.com/photo-1621964225072-8ad66c1a6d9d?auto=format&fit=crop&w=800&q=80" alt="Glacial lake on Mount Kenya" />
+      <img src="https://images.unsplash.com/photo-1610724860085-02a8a312d40f?auto=format&fit=crop&w=800&q=80" alt="Climber overlooking the peak" />
+    </div>
+  </section>
+
+  <section class="things-to-do">
+    <h2>Things to Do Around Mount Kenya</h2>
+    <ul>
+      <li><strong>Climb to Point Lenana:</strong> The most accessible summit for trekkers — sunrise views here are divine.</li>
+      <li><strong>Explore Mount Kenya National Park:</strong> Home to elephants, buffaloes, leopards, and colobus monkeys.</li>
+      <li><strong>Visit Lake Ellis and Lake Michaelson:</strong> Two breathtaking alpine lakes fed by glacial meltwater.</li>
+      <li><strong>Camping Under the Stars:</strong> Spend the night beneath Africa’s Milky Way — an experience you’ll never forget.</li>
+      <li><strong>Cultural Tours:</strong> Meet the Kikuyu and Meru communities who share ancient legends about the mountain.</li>
+    </ul>
+  </section>
+
+  <section class="fun-facts">
+    <h2>Fun Facts About Mount Kenya</h2>
+    <ul>
+      <li>🏔️ Mount Kenya is an **extinct volcano** that erupted over 3 million years ago.</li>
+      <li>❄️ Despite being near the equator, its peaks remain covered with **glaciers** year-round (though shrinking due to climate change).</li>
+      <li>🐘 The mountain’s forests are home to the rare **bongo antelope**, one of Kenya’s most elusive animals.</li>
+      <li>🌍 The mountain has **three main peaks**: Batian (5199m), Nelion (5188m), and Lenana (4985m).</li>
+      <li>☀️ The Kikuyu believe **God (Ngai)** lives at the summit — they pray facing the mountain.</li>
+      <li>🎬 Mount Kenya appeared in the movie *The Snows of Kilimanjaro* as a symbol of adventure and beauty.</li>
+      <li>💧 Its glaciers feed the **Tana River**, Kenya’s longest and most vital waterway.</li>
+    </ul>
+  </section>
+
+  <section class="hidden-gems">
+    <h2>Hidden Gems of Mount Kenya</h2>
+    <p>
+      💎 *Chogoria Route* — The most scenic ascent, passing waterfalls and lakes so blue they look unreal.  
+      💎 *Castle Forest Lodge* — A hidden retreat surrounded by bamboo groves and elephant trails.  
+      💎 *Naro Moru Caves* — Used by Mau Mau freedom fighters during Kenya’s struggle for independence.  
+    </p>
+  </section>
+
+  <section class="booking">
+    <h2>Plan Your Mount Kenya Expedition</h2>
+    <form action="../booking.html" method="GET" class="booking-form">
+      <label for="days">Number of Days:</label>
+      <input type="number" id="days" name="days" min="1" max="14" placeholder="e.g., 5" required />
+
+      <label for="airport">Preferred Airport:</label>
+      <select id="airport" name="airport" required>
+        <option value="">Select an airport</option>
+        <option value="JKIA">Jomo Kenyatta International Airport (Nairobi)</option>
+        <option value="Nanyuki">Nanyuki Airstrip</option>
+      </select>
+
+      <label for="plane">Flight Option:</label>
+      <select id="plane" name="plane" required>
+        <option value="">Choose flight class</option>
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+        <option value="Private">Private Charter</option>
+      </select>
+
+      <label for="hotel">Preferred Stay:</label>
+      <select id="hotel" name="hotel">
+        <option value="serena">Serena Mountain Lodge</option>
+        <option value="fairmont">Fairmont Mount Kenya Safari Club</option>
+        <option value="borana">Borana Lodge</option>
+        <option value="timau">Timau River Lodge</option>
+      </select>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>🇰🇪 Mount Kenya | Where Heaven Meets the Earth</p>
+  </footer>
+</body>
+</html>

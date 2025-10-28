@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book a Visit — Kenya Majestic</title>
+  <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+</head>
+<body>
+  <div class="video-stack">
+    <video id="bg-video" class="bg" autoplay muted loop playsinline>
+      <source src="media/videos/hills.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-overlay"></div>
+
+  <header class="site-header">
+    <div class="nav-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Flag_of_Kenya.svg" alt="Kenya flag" class="flag-icon">
+      <a class="brand" href="index.html">Kenya Majestic</a>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="places.html">Places</a></li>
+        <li><a href="booking.html" class="active">Book</a></li>
+        <li><a href="rewards.html">Rewards</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content booking-page">
+    <h1>Book Your Visit</h1>
+
+    <form id="booking-form" class="booking-form">
+      <label>Destination
+        <select id="destination" required>
+          <option value="">— choose —</option>
+          <option>Diani Beach</option>
+          <option>Maasai Mara</option>
+          <option>Mount Kenya</option>
+          <option>Amboseli</option>
+          <!-- more options -->
+        </select>
+      </label>
+
+      <label>Arrival airport
+        <select id="airport" required>
+          <option>Nairobi (NBO)</option>
+          <option>Mombasa (MBA)</option>
+          <option>Malindi (MYD)</option>
+          <option>Kisumu (KIS)</option>
+        </select>
+      </label>
+
+      <label>Airline
+        <select id="airline">
+          <option>Kenya Airways</option>
+          <option>Jambojet</option>
+          <option>Safarilink</option>
+          <option>Coastal Aviation</option>
+        </select>
+      </label>
+
+      <label>Check-in date
+        <input id="start-date" type="date" required>
+      </label>
+
+      <label>Number of days
+        <input id="days" type="number" value="3" min="1" max="30" required>
+      </label>
+
+      <label>Hotel category
+        <select id="hotel">
+          <option value="50">Budget (KES 50k/night)</option>
+          <option value="100">Comfort (KES 100k/night)</option>
+          <option value="200">Luxury (KES 200k/night)</option>
+        </select>
+      </label>
+
+      <div class="calc-row">
+        <button type="button" id="estimate-btn" class="btn primary">Estimate Price</button>
+        <button type="submit" class="btn ghost">Confirm Booking</button>
+      </div>
+    </form>
+
+    <div id="estimate" class="estimate-box" aria-live="polite" hidden>
+      <h3>Estimate</h3>
+      <p id="est-summary"></p>
+      <p><strong>Total (KES):</strong> <span id="est-total"></span></p>
+    </div>
+
+    <div id="bookings-list" class="bookings-list"></div>
+
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year-booking"></span> Kenya Majestic</small>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Inline script to wire booking specifics using utils in main.js
+    (function(){
+      const qs = s => document.querySelector(s);
+      // prefill destination if passed in querystring
+      const params = new URLSearchParams(location.search);
+      if(params.get('destination')){
+        const dest = decodeURIComponent(params.get('destination'));
+        const sel = qs('#destination');
+        if([...sel.options].some(o=>o.text === dest)) sel.value = dest;
+      }
+    })();
+  </script>
+</body>
+</html>

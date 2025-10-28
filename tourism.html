@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tourism — Tembea Kenya</title>
+  <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+  <script defer src="js/main.js"></script>
+  <script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+</head>
+<body>
+  <!-- Background video (default for tourism) -->
+  <div class="video-stack" aria-hidden="true">
+    <video id="bg-video" class="bg" autoplay muted loop playsinline>
+      <source src="media/videos/savanah.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-overlay" aria-hidden="true"></div>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" role="banner">
+    <div class="nav-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Flag_of_Kenya.svg" alt="Kenya flag" class="flag-icon">
+      <a class="brand" href="index.html">Tembea Kenya</a>
+    </div>
+
+    <nav class="site-nav" role="navigation" aria-label="Main">
+      <input id="nav-search" placeholder="Search destinations e.g. Maasai Mara" aria-label="Search destinations">
+      <ul>
+        <li><a href="index.html" data-video="kenya.mp4">Home</a></li>
+        <li><a href="about.html" data-video="kenya.mp4">About</a></li>
+        <li><a href="culture.html" data-video="maasai.mp4">Culture</a></li>
+        <li><a href="tourism.html" class="active" data-video="savannah.mp4">Tourism</a></li>
+        <li><a href="places.html" data-video="savannah.mp4">Places</a></li>
+        <li><a href="booking.html" data-video="hills.mp4">Book</a></li>
+      </ul>
+      <button id="music-toggle" aria-label="Toggle ambient music">🔈</button>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main class="content" role="main" aria-labelledby="tourism-title">
+    <h1 id="tourism-title">Explore Kenya — Top Destinations & Experiences</h1>
+    <p class="lead">Discover curated destinations, themed routes, and hands-on experiences. Click a card for full details and to start booking.</p>
+
+    <!-- Filters / quick controls -->
+    <div class="controls" aria-hidden="false" style="display:flex;gap:12px;flex-wrap:wrap;margin:18px 0;">
+      <select id="filter-type" aria-label="Filter by type">
+        <option value="all">All types</option>
+        <option value="safari">Safari & Wildlife</option>
+        <option value="coast">Beaches & Coast</option>
+        <option value="mountain">Mountains & Trekking</option>
+        <option value="island">Islands & Heritage</option>
+      </select>
+
+      <select id="filter-season" aria-label="Best season">
+        <option value="all">All seasons</option>
+        <option value="dry">Dry season (Jun-Oct)</option>
+        <option value="wet">Green season (Nov-May)</option>
+      </select>
+
+      <button id="shuffle-btn" class="btn ghost">Shuffle Highlights</button>
+      <a class="btn primary" href="booking.html">Quick Book</a>
+    </div>
+
+    <!-- Cards grid -->
+    <section class="cards-grid" aria-label="Destination cards">
+      <!-- Each card has data-video for the background-swapping logic -->
+      <a class="card" href="places/maasai-mara.html" data-video="savannah.mp4" data-type="safari" data-season="dry">
+        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1400&q=60" alt="Maasai Mara - Wildebeest migration">
+        <div class="card-meta">
+          <h4>Maasai Mara</h4>
+          <p>Epic wildlife, the Great Migration, big-sky safari.</p>
+          <small>Best: Jul–Oct</small>
+        </div>
+      </a>
+
+      <a class="card" href="places/diani.html" data-video="coast.mp4" data-type="coast" data-season="dry">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=60" alt="Diani Beach">
+        <div class="card-meta">
+          <h4>Diani Beach</h4>
+          <p>Coral reefs, white-sand beaches, water sports.</p>
+          <small>Best: Dec–Mar, Jul–Oct</small>
+        </div>
+      </a>
+
+      <a class="card" href="places/mount-kenya.html" data-video="mount.mp4" data-type="mountain" data-season="all">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=60" alt="Mount Kenya">
+        <div class="card-meta">
+          <h4>Mount Kenya</h4>
+          <p>Summit treks, alpine lakes, unique flora.</p>
+          <small>Best: Jan–Mar, Jul–Oct</small>
+        </div>
+      </a>
+
+      <a class="card" href="places/amboseli.html" data-video="wildlife.mp4" data-type="safari" data-season="dry">
+        <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1400&q=60" alt="Amboseli National Park - Elephants">
+        <div class="card-meta">
+          <h4>Amboseli</h4>
+          <p>Elephants and spectacular Kilimanjaro views.</p>
+          <small>Best: Jun–Oct</small>
+        </div>
+      </a>
+
+      <a class="card" href="places/hells-gate.html" data-video="hiking.mp4" data-type="mountain" data-season="all">
+        <img src="https://images.unsplash.com/photo-1533670805201-72626f010b86?auto=format&fit=crop&w=1400&q=60" alt="Hell's Gate National Park">
+        <div class="card-meta">
+          <h4>Hell's Gate</h4>
+          <p>Climbing, cycling, geologic wonders close to Naivasha.</p>
+          <small>Best: Year-round</small>
+        </div>
+      </a>
+
+      <a class="card" href="places/tsavo.html" data-video="tsavo.mp4" data-type="safari" data-season="dry">
+        <img src="https://images.unsplash.com/photo-1517495306984-9b3b1a4f2b1b?auto=format&fit=crop&w=1400&q=60" alt="Tsavo National Park">
+        <div class="card-meta">
+          <h4>Tsavo</h4>
+          <p>Vast wilderness and iconic red elephants.</p>
+          <small>Best: Jun–Oct</small>
+        </div>
+      </a>
+
+      <a class="card" href="places/lamu.html" data-video="lamu.mp4" data-type="island" data-season="dry">
+        <img src="https://images.unsplash.com/photo-1504850198895-0a3e2b2d4703?auto=format&fit=crop&w=1400&q=60" alt="Lamu Island">
+        <div class="card-meta">
+          <h4>Lamu Island</h4>
+          <p>Historic Swahili architecture, dhow sails and calm bays.</p>
+          <small>Best: Jul–Oct</small>
+        </div>
+      </a>
+
+      <a class="card" href="places/lake-naivasha.html" data-video="lake.mp4" data-type="coast" data-season="wet">
+        <img src="https://images.unsplash.com/photo-1526481280698-65d3d5f0b6f6?auto=format&fit=crop&w=1400&q=60" alt="Lake Naivasha">
+        <div class="card-meta">
+          <h4>Lake Naivasha</h4>
+          <p>Birdlife, boat tours and freshwater lakeside lodges.</p>
+          <small>Best: Nov–Mar</small>
+        </div>
+      </a>
+
+      <a class="card" href="places/samburu.html" data-video="samburu.mp4" data-type="safari" data-season="dry">
+        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1400&q=60" alt="Samburu Reserve">
+        <div class="card-meta">
+          <h4>Samburu</h4>
+          <p>Unique species and dramatic landscapes in northern Kenya.</p>
+          <small>Best: Jun–Oct</small>
+        </div>
+      </a>
+
+      <a class="card" href="places/nairobi.html" data-video="city.mp4" data-type="city" data-season="all">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=60" alt="Nairobi City">
+        <div class="card-meta">
+          <h4>Nairobi</h4>
+          <p>Urban culture, national museums, Nairobi National Park nearby.</p>
+          <small>Best: Year-round</small>
+        </div>
+      </a>
+    </section>
+
+    <!-- Quick reviews & highlights -->
+    <section style="margin-top:28px;">
+      <h2>What travellers say</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px;">
+        <blockquote class="testimonial">"The Maasai Mara felt like a movie. Guides were excellent." — <em>Anna, UK</em></blockquote>
+        <blockquote class="testimonial">"Diani's coral reefs are magic; the water is unforgettable." — <em>Samuel, KE</em></blockquote>
+        <blockquote class="testimonial">"Amboseli's elephants at sunrise — a memory forever." — <em>Carlos, ES</em></blockquote>
+      </div>
+    </section>
+
+    <!-- Map & info -->
+    <section style="margin-top:24px;">
+      <h2>Kenya at a glance</h2>
+      <div style="display:grid;grid-template-columns:1fr 380px;gap:16px;align-items:start">
+        <div>
+          <p>Kenya is a mosaic of ecosystems and cultures. Use this hub to pick a destination, view its page, and start your booking. Tip: use the filters to shortlist by activity or season.</p>
+          <ul>
+            <li>Capital: Nairobi</li>
+            <li>Official languages: English, Kiswahili</li>
+            <li>Currency: Kenyan Shilling (KES)</li>
+            <li>Best times: Dry season Jun–Oct, short rains Nov–Dec</li>
+          </ul>
+        </div>
+
+        <!-- Static iframe map (replace with interactive map if desired) -->
+        <div style="border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.4)">
+          <iframe title="Kenya map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12774612.867188548!2d33.84477569824219!3d-0.023559199999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b3d8b6a2f3f%3A0xf582b9b7cf44c6aa!2sKenya!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <small>© <span id="year-tourism"></span> Tembea Kenya — Tembea, Taste, Treasure.</small>
+  </footer>
+
+  <!-- small helper script for client-side filtering, shuffle, and video data attr wiring -->
+  <script>
+    (function(){
+      // populate year placeholder if present
+      document.addEventListener('DOMContentLoaded', ()=> {
+        const y = new Date().getFullYear();
+        const el = document.getElementById('year-tourism');
+        if(el) el.textContent = y;
+      });
+
+      // filter logic
+      const cards = Array.from(document.querySelectorAll('.card'));
+      const typeSel = document.getElementById('filter-type');
+      const seasonSel = document.getElementById('filter-season');
+      const shuffleBtn = document.getElementById('shuffle-btn');
+
+      function applyFilters(){
+        const type = typeSel.value;
+        const season = seasonSel.value;
+        cards.forEach(c => {
+          const matchesType = (type === 'all') || (c.dataset.type === type);
+          const matchesSeason = (season === 'all') || (c.dataset.season === season);
+          c.style.display = (matchesType && matchesSeason) ? 'block' : 'none';
+        });
+      }
+
+      typeSel?.addEventListener('change', applyFilters);
+      seasonSel?.addEventListener('change', applyFilters);
+
+      // shuffle
+      shuffleBtn?.addEventListener('click', ()=>{
+        const parent = document.querySelector('.cards-grid');
+        const frag = document.createDocumentFragment();
+        const arr = cards.slice().sort(()=>Math.random()-0.5);
+        arr.forEach(x => frag.appendChild(x));
+        parent.innerHTML = '';
+        parent.appendChild(frag);
+      });
+
+      // clicking a card will also instruct main.js to swap background if configured via data-video (main.js listens to a[data-video])
+      // add click sound / small animation
+      cards.forEach(c=>{
+        c.addEventListener('click', ()=> {
+          c.animate([{ transform: 'translateY(0px)' }, { transform: 'translateY(-6px)' }, { transform: 'translateY(0px)' }], { duration: 300, easing: 'ease-out' });
+        });
+      });
+
+      // keyboard-accessible search (enter => attempt redirect using same map used in main.js)
+      const search = document.getElementById('nav-search');
+      search?.addEventListener('keypress', (e) => {
+        if(e.key === 'Enter'){ e.preventDefault(); const q = search.value.trim().toLowerCase(); const map = { 'diani': 'places/diani.html', 'maasai': 'places/maasai-mara.html', 'maasai mara': 'places/maasai-mara.html', 'mount kenya': 'places/mount-kenya.html', 'nairobi': 'places/nairobi.html' }; if(map[q]) location.href = map[q]; else alert('Try "Diani", "Maasai", or "Mount Kenya"'); }
+      });
+    })();
+  </script>
+</body>
+</html>

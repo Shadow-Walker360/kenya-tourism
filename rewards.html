@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rewards — Kenya Majestic</title>
+  <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+</head>
+<body>
+  <div class="video-stack">
+    <video id="bg-video" class="bg" autoplay muted loop playsinline>
+      <source src="media/videos/kenya.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-overlay"></div>
+
+  <header class="site-header">
+    <div class="nav-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Flag_of_Kenya.svg" alt="Kenya flag" class="flag-icon">
+      <a class="brand" href="index.html">Kenya Majestic</a>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="places.html">Places</a></li>
+        <li><a href="booking.html">Book</a></li>
+        <li><a href="rewards.html" class="active">Rewards</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content rewards-page">
+    <h1>Your Rewards</h1>
+    <div class="rewards-box">
+      <p>Your current points: <strong id="points-count">0</strong></p>
+      <button id="redeem-100" class="btn primary">Redeem 100 pts → Souvenir coupon</button>
+      <button id="redeem-250" class="btn ghost">Redeem 250 pts → 10% off next booking</button>
+      <div id="redeem-msg" class="redeem-msg"></div>
+    </div>
+
+    <section>
+      <h2>Leaderboard (demo)</h2>
+      <ol id="leaderboard">
+        <li>Visitor123 — 520 pts</li>
+        <li>ExplorerA — 410 pts</li>
+        <li>You? — 0 pts</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year-rewards"></span> Kenya Majestic</small>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

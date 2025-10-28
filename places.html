@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Places to Visit — Kenya Majestic</title>
+  <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+</head>
+<body>
+  <div class="video-stack">
+    <video id="bg-video" class="bg" autoplay muted loop playsinline>
+      <source src="media/videos/savannah.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-overlay"></div>
+
+  <header class="site-header">
+    <div class="nav-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Flag_of_Kenya.svg" alt="Kenya flag" class="flag-icon">
+      <a class="brand" href="index.html">Kenya Majestic</a>
+    </div>
+    <nav class="site-nav" aria-label="Places nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="places.html" class="active">Places</a></li>
+        <li><a href="booking.html">Book</a></li>
+        <li><a href="rewards.html">Rewards</a></li>
+        <li><a href="places/place-template.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Destinations</h1>
+    <p class="lead">Click a destination to open its page with a full gallery, facts, and a book button.</p>
+
+    <div class="cards-grid">
+      <!-- Each card links to a place page. Pages are in /places/ -->
+      <a class="card" href="places/diani.html" data-video="coast.mp4">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60" alt="Diani">
+        <div class="card-meta"><h4>Diani Beach</h4><p>Gold sand, turquoise water</p></div>
+      </a>
+
+      <a class="card" href="places/maasai-mara.html" data-video="savannah.mp4">
+        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=60" alt="Maasai Mara">
+        <div class="card-meta"><h4>Maasai Mara</h4><p>Great Migration & wildlife</p></div>
+      </a>
+
+      <a class="card" href="places/mount-kenya.html" data-video="mount.mp4">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60" alt="Mount Kenya">
+        <div class="card-meta"><h4>Mount Kenya</h4><p>Alpine peaks & trekking</p></div>
+      </a>
+
+      <a class="card" href="places/amboseli.html" data-video="wildlife.mp4">
+        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=60" alt="Amboseli">
+        <div class="card-meta"><h4>Amboseli</h4><p>Elephant herds & Kilimanjaro views</p></div>
+      </a>
+
+      <!-- add more cards similarly for Nakuru, Tsavo, Lamu, Samburu, Hells Gate -->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year-places"></span> Kenya Majestic</small>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

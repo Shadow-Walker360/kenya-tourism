@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samburu National Reserve - The Untamed North</title>
+  <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+</head>
+<body>
+  <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1620248509123-64e3b7bfa09f?auto=format&fit=crop&w=1400&q=80');">
+    <div class="overlay"></div>
+    <h1>Samburu National Reserve</h1>
+    <p>The Untamed North of Kenya</p>
+  </header>
+
+  <section class="intro">
+    <h2>Welcome to Samburu</h2>
+    <p>
+      Welcome to <strong>Samburu National Reserve</strong> — a breathtaking stretch of savanna north of the equator,  
+      where Kenya shows off its wilder, quieter, and deeply spiritual side.  
+      The land is rugged, the skies are wide, and the people — the Samburu — still move with the rhythm of their ancestors.
+    </p>
+    <p>
+      The reserve’s lifeblood, the <em>Ewaso Nyiro River</em>, winds lazily through the arid land, giving life to palm groves and acacia woodlands that burst with elephants, lions, and rare species you’ll only find here.
+    </p>
+  </section>
+
+  <section class="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="photo-grid">
+      <img src="https://images.unsplash.com/photo-1575459914134-785fb1b9c0f4?auto=format&fit=crop&w=800&q=80" alt="Samburu landscape" />
+      <img src="https://images.unsplash.com/photo-1603369587764-2cbcb89b4010?auto=format&fit=crop&w=800&q=80" alt="Grevy’s zebra" />
+      <img src="https://images.unsplash.com/photo-1581437213781-3f5d86ab2b75?auto=format&fit=crop&w=800&q=80" alt="Samburu women" />
+      <img src="https://images.unsplash.com/photo-1613745449269-154b67f73c68?auto=format&fit=crop&w=800&q=80" alt="Elephants near Ewaso Nyiro" />
+      <img src="https://images.unsplash.com/photo-1618773928121-c32242e63fbd?auto=format&fit=crop&w=800&q=80" alt="Samburu sunset" />
+      <img src="https://images.unsplash.com/photo-1610550505650-08647c54739d?auto=format&fit=crop&w=800&q=80" alt="Samburu warriors" />
+    </div>
+  </section>
+
+  <section class="things-to-do">
+    <h2>Things to Do in Samburu</h2>
+    <ul>
+      <li><strong>Wildlife Safari:</strong> Spot the Samburu Special Five — Grevy’s zebra, reticulated giraffe, Somali ostrich, beisa oryx, and gerenuk.</li>
+      <li><strong>Cultural Visit:</strong> Meet the Samburu people, hear their songs, and learn their warrior traditions.</li>
+      <li><strong>Ewaso Nyiro River Walk:</strong> A peaceful nature stroll along the river that gives life to this land.</li>
+      <li><strong>Birdwatching:</strong> Watch lilac-breasted rollers, hornbills, and weaver birds light up the skies.</li>
+      <li><strong>Star Gazing:</strong> The night skies in Samburu are crystal clear — galaxies feel within reach.</li>
+    </ul>
+  </section>
+
+  <section class="hidden-gems">
+    <h2>Hidden Gems of Samburu</h2>
+    <p>
+      💎 *The Singing Wells* — Where Samburu herders sing to their cattle as they draw water from the earth.  
+      💎 *Lerata Hills* — A quiet spot perfect for sunrise meditation and storytelling.  
+      💎 *Koitogor and Ololokwe Hills* — Sacred mountains that rise dramatically against the plains.  
+    </p>
+  </section>
+
+  <section class="booking">
+    <h2>Book Your Samburu Experience</h2>
+    <form action="../booking.html" method="GET" class="booking-form">
+      <label for="days">Number of Days:</label>
+      <input type="number" id="days" name="days" min="1" max="14" placeholder="e.g., 5" required />
+
+      <label for="airport">Preferred Airport:</label>
+      <select id="airport" name="airport" required>
+        <option value="">Select an airport</option>
+        <option value="JKIA">Jomo Kenyatta International Airport (Nairobi)</option>
+        <option value="Isiolo">Isiolo International Airport</option>
+      </select>
+
+      <label for="plane">Flight Option:</label>
+      <select id="plane" name="plane" required>
+        <option value="">Choose flight class</option>
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+        <option value="Private">Private Charter</option>
+      </select>
+
+      <label for="hotel">Preferred Stay:</label>
+      <select id="hotel" name="hotel">
+        <option value="elephant-bedroom">Elephant Bedroom Camp</option>
+        <option value="sasaab">Sasaab Lodge</option>
+        <option value="saruni">Saruni Samburu</option>
+        <option value="samburu-intrepids">Samburu Intrepids</option>
+      </select>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>🇰🇪 Samburu National Reserve | Kenya’s Wild Heart</p>
+  </footer>
+</body>
+</html>

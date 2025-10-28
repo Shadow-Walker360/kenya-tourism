@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lake Naivasha | Kenya Tourism</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(5px);
+      z-index: 100;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 1.8em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00cc66;
+    }
+
+    video.bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.6);
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 100px 50px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .intro {
+      max-width: 850px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+
+    .intro h2 {
+      font-size: 3em;
+      color: #00cc66;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden-gem {
+      margin-top: 50px;
+      background: rgba(0,0,0,0.6);
+      padding: 25px;
+      border-radius: 15px;
+      font-size: 1.1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop class="bg">
+    <source src="../videos/naivasha.mp4" type="video/mp4" />
+  </video>
+
+  <header>
+    <h1>Kenya Tourism</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../culture.html">Culture</a>
+      <a href="../tourism.html" class="active">Tourism</a>
+    </nav>
+  </header>
+
+  <section>
+    <div class="intro">
+      <h2>Lake Naivasha</h2>
+      <p>
+        Welcome to Lake Naivasha — the serene jewel of the Rift Valley,  
+        where still waters reflect the sky, and nature hums in pastel tones.  
+        From the laughing hippos to the chorus of birds that echo through the acacia trees,  
+        Naivasha feels like a dream that decided to stay.
+      </p>
+      <p>
+        Take a boat ride through lily-dotted waters.  
+        Watch giraffes stroll lazily at Crescent Island.  
+        Sip tea by the shore as flamingos paint the horizon pink.  
+        Here, time moves slower — deliberately — so your soul can catch up.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1551808525-51f8df9bebe6" alt="Lake Naivasha boat ride" />
+      <img src="https://images.unsplash.com/photo-1594121360373-8ee2e613c6cc" alt="Hippos in Lake Naivasha" />
+      <img src="https://images.unsplash.com/photo-1520931737576-0a9720f92a7b" alt="Flamingos in Naivasha" />
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="Sunset over Naivasha" />
+      <img src="https://images.unsplash.com/photo-1533497073830-7eab1e6b8078" alt="Crescent Island wildlife" />
+      <img src="https://images.unsplash.com/photo-1508470950301-76e189d68b52" alt="Boats at Naivasha shore" />
+      <img src="https://images.unsplash.com/photo-1513709630908-90329cc9cfa4" alt="Naivasha scenic view" />
+      <img src="https://images.unsplash.com/photo-1553773076-922a8e3b7f2d" alt="Acacia trees by Naivasha" />
+      <img src="https://images.unsplash.com/photo-1582723198944-c17b08a7b61c" alt="Tourists on Crescent Island" />
+      <img src="https://images.unsplash.com/photo-1548266652-99cf27701c31" alt="Lake Naivasha horizon" />
+    </div>
+
+    <div class="hidden-gem">
+      <h3>Hidden Gem: Crescent Island Sanctuary 🌿</h3>
+      <p>
+        Crescent Island isn’t just a piece of land — it’s an untouched Eden.  
+        With no fences, animals roam freely, making you part of their world.  
+        Giraffes nibble nearby, zebras trot past, and the silence is louder than any city sound you’ve known.  
+        It’s Naivasha’s whispered secret — and it’s waiting for you.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Kenya Tourism Board. Crafted with ❤️ for the Pride of Africa.</p>
+  </footer>
+</body>
+</html>

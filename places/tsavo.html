@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tsavo National Park - The Land of Giants</title>
+  <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+</head>
+<body>
+  <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1618944154439-46bfa9490c58?auto=format&fit=crop&w=1350&q=80');">
+    <div class="overlay"></div>
+    <h1>Tsavo National Park</h1>
+    <p>The Kingdom of the Red Elephants</p>
+  </header>
+
+  <section class="intro">
+    <h2>Welcome to Tsavo</h2>
+    <p>
+      Welcome to **Tsavo National Park**, one of Kenya’s largest and oldest parks — a wild land split into **Tsavo East** and **Tsavo West**.  
+      Here, the earth burns red, the sunsets look like they’re painted by God Himself, and herds of elephants roam free, dusting themselves in the park’s signature ochre soil.
+    </p>
+    <p>
+      Tsavo isn’t just a safari — it’s an **experience that humbles your soul**.  
+      From volcanic hills and lava flows to palm-shaded oases, the park whispers the story of ancient Africa.
+    </p>
+  </section>
+
+  <section class="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="photo-grid">
+      <img src="https://images.unsplash.com/photo-1578898888453-02c6bfa8e2f7?auto=format&fit=crop&w=800&q=80" alt="Elephants in Tsavo" />
+      <img src="https://images.unsplash.com/photo-1558444212-4c5f0b4b16a7?auto=format&fit=crop&w=800&q=80" alt="Tsavo sunrise" />
+      <img src="https://images.unsplash.com/photo-1619877831890-11d7dc0027a0?auto=format&fit=crop&w=800&q=80" alt="Tsavo landscapes" />
+      <img src="https://images.unsplash.com/photo-1601850884928-f74a836d8d2f?auto=format&fit=crop&w=800&q=80" alt="Lions of Tsavo" />
+      <img src="https://images.unsplash.com/photo-1583302901242-9a8d126d8d1e?auto=format&fit=crop&w=800&q=80" alt="Safari jeep" />
+      <img src="https://images.unsplash.com/photo-1568636654638-5b0812ec32aa?auto=format&fit=crop&w=800&q=80" alt="Tsavo wilderness" />
+    </div>
+  </section>
+
+  <section class="things-to-do">
+    <h2>Things to Do in Tsavo</h2>
+    <ul>
+      <li><strong>Game Drives:</strong> Witness the majestic elephants, lions, leopards, and rhinos in their natural glory.</li>
+      <li><strong>Mzima Springs:</strong> Explore crystal-clear pools where hippos and crocodiles coexist under the volcanic shade.</li>
+      <li><strong>Shetani Lava Flow:</strong> Hike through ancient black lava fields born from the Earth’s fiery rage.</li>
+      <li><strong>Birdwatching:</strong> Over 500 bird species, from kingfishers to eagles, call this land home.</li>
+      <li><strong>Safari Lodges:</strong> Stay in the heart of the wild — think candlelight dinners under acacia trees.</li>
+    </ul>
+  </section>
+
+  <section class="booking">
+    <h2>Book Your Tsavo Adventure</h2>
+    <form action="../booking.html" method="GET" class="booking-form">
+      <label for="days">Number of Days:</label>
+      <input type="number" id="days" name="days" min="1" max="14" placeholder="e.g., 3" required />
+
+      <label for="airport">Preferred Airport:</label>
+      <select id="airport" name="airport" required>
+        <option value="">Select an airport</option>
+        <option value="JKIA">Jomo Kenyatta International Airport (Nairobi)</option>
+        <option value="Moi">Moi International Airport (Mombasa)</option>
+      </select>
+
+      <label for="plane">Flight Option:</label>
+      <select id="plane" name="plane" required>
+        <option value="">Choose flight class</option>
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+        <option value="Private">Private Charter</option>
+      </select>
+
+      <label for="hotel">Preferred Stay:</label>
+      <select id="hotel" name="hotel">
+        <option value="ashnil">Ashnil Aruba Lodge</option>
+        <option value="voi">Voi Safari Lodge</option>
+        <option value="kilaguni">Kilaguni Serena Safari Lodge</option>
+        <option value="satao">Satao Camp</option>
+      </select>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>🇰🇪 Made with love for Kenya | Tsavo National Park</p>
+  </footer>
+</body>
+</html>

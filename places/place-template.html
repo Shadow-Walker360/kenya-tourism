@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PLACE NAME — Tembea Kenya</title>
+  <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+  <style>
+    /* Tiny page-specific tweaks (keeps project modular) */
+    .place-hero { padding:120px 20px 40px; text-align:center; color:#fff; }
+    .place-hero h1 { font-size: clamp(28px, 4vw, 44px); color: var(--gold); margin-bottom:8px; }
+    .place-grid { display:grid; grid-template-columns: 1fr 420px; gap:20px; align-items:start; max-width:1100px; margin: 28px auto; padding:0 18px; }
+    .place-info { background: rgba(0,0,0,0.45); padding:18px; border-radius:12px; }
+    .gallery { display:grid; grid-template-columns: repeat(2,1fr); gap:10px; }
+    .gallery img { width:100%; height:160px; object-fit:cover; border-radius:8px; cursor:pointer; }
+    .book-card { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); padding:16px; border-radius:12px; }
+    .small-hint{ font-size:13px; color:#cfe8f8; margin-top:8px }
+    @media (max-width:980px){ .place-grid{grid-template-columns:1fr} .gallery img{height:140px} }
+  </style>
+</head>
+<body>
+  <!-- background video (keeps parity with main site) -->
+  <div class="video-stack" aria-hidden="true">
+    <video id="bg-video" class="bg" autoplay muted loop playsinline>
+      <!-- Replace src with a local file like ../assets/videos/diani.mp4 or remote hosted video -->
+      <source src="../assets/videos/PLACE_VIDEO.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-overlay" aria-hidden="true"></div>
+
+  <!-- navbar (consistent with project) -->
+  <header class="site-header">
+    <div class="nav-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Flag_of_Kenya.svg" alt="Kenya flag" class="flag-icon">
+      <a class="brand" href="../index.html">Tembea Kenya</a>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="coastal-circuit.html">bandarini</a>
+        <li><a href="diani.html">diani</a></li>
+        <li><a href="maasai-mara.html">maasai mara</a></li>
+        <li><a href="mount-kenya.html">mount kenya</a></li>
+        <li><a href="nakuru.html">nakuru</a></li> 
+        <li><a href="samburu.html">samburu</a></li>
+        <li><a href="fortjesus.html">Fort-Jesus</a></li>
+        <li><a href="lamu.html">lamu</a></li>
+        <li><a href="hells-gate.html">hell-gate</a></li>
+        <li><a href="tsavo.html">tsavo</a></li>
+        <li><a href="lake-victoria.html">lake victoria</a></li>
+        <li><a href="lake-nakuru.html">lake nakuru</a></li>
+        <li><a href="lake-naivasha.html">lake naivasha</a
+></li>        <li><a href="longonot.html">Mt.Longonot</a></li>
+        <li><a href="mount-kenya.html">Mt.Kenya</a></li>
+        <li><a href="amboseli.html">amboseli</a></li>
+
+        
+        
+        
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="place-hero">
+      <h1 id="place-name">PLACE NAME</h1>
+      <p id="place-tagline">Short tagline about this magical spot (swap with real line).</p>
+      <div class="cta-row" style="margin-top:14px">
+        <a class="btn primary" id="book-now-btn" href="#book-section">Book this place</a>
+        <a class="btn ghost" id="open-gallery-btn">Open Gallery</a>
+      </div>
+    </section>
+
+    <!-- content grid: left: info & gallery, right: booking panel -->
+    <div class="place-grid">
+      <div class="place-info">
+        <h2>About PLACE NAME</h2>
+        <p id="place-intro">Full paragraph: describe the place, highlights, how to get there, best seasons, cultural notes. Make it evocative — be poetic and practical.</p>
+
+        <h3>Quick Facts</h3>
+        <ul>
+          <li id="fact-distance">Distance from Nairobi: ~XXX km</li>
+          <li id="fact-best">Best time: Month–Month</li>
+          <li id="fact-activities">Key activities: snorkel, game drive, trekking</li>
+        </ul>
+
+        <h3>Gallery</h3>
+        <div class="gallery" id="place-gallery" aria-hidden="false">
+          <!-- 10+ hotlinked images (swap to your own remotely hosted images if desired) -->
+          <img data-full="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=60" alt="Image 1" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60">
+          <img data-full="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1400&q=60" alt="Image 2" src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=60">
+          <img data-full="https://images.unsplash.com/photo-1504850198895-0a3e2b2d4703?auto=format&fit=crop&w=1400&q=60" alt="Image 3" src="https://images.unsplash.com/photo-1504850198895-0a3e2b2d4703?auto=format&fit=crop&w=800&q=60">
+          <img data-full="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1400&q=60" alt="Image 4" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=800&q=60">
+          <img data-full="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1400&q=60" alt="Image 5" src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=60">
+          <img data-full="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=60" alt="Image 6" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=60">
+          <img data-full="https://images.unsplash.com/photo-1565895405227-98acdf4080a1?auto=format&fit=crop&w=1400&q=60" alt="Image 7" src="https://images.unsplash.com/photo-1565895405227-98acdf4080a1?auto=format&fit=crop&w=800&q=60">
+          <img data-full="https://images.unsplash.com/photo-1526481280698-65d3d5f0b6f6?auto=format&fit=crop&w=1400&q=60" alt="Image 8" src="https://images.unsplash.com/photo-1526481280698-65d3d5f0b6f6?auto=format&fit=crop&w=800&q=60">
+          <img data-full="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1400&q=60" alt="Image 9" src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=800&q=60">
+          <img data-full="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=60" alt="Image 10" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=60">
+        </div>
+
+        <h3 style="margin-top:14px">Map</h3>
+        <div style="border-radius:10px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.4)">
+          <iframe title="Place map" src="https://www.google.com/maps?q=PLACE+NAME&output=embed" width="100%" height="260" style="border:0" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Booking panel (always present on every page) -->
+      <aside class="book-card" id="book-section" aria-labelledby="book-h">
+        <h3 id="book-h">Book Your Visit</h3>
+
+        <form id="local-booking-form" autocomplete="off" novalidate>
+          <label>
+            Destination
+            <input id="b-destination" type="text" readonly>
+          </label>
+
+          <label>
+            Arrival Airport
+            <select id="b-airport">
+              <option value="NBO">Nairobi (NBO)</option>
+              <option value="MBA">Mombasa (MBA)</option>
+              <option value="MYD">Malindi (MYD)</option>
+              <option value="KIS">Kisumu (KIS)</option>
+            </select>
+          </label>
+
+          <label>
+            Airline
+            <select id="b-airline">
+              <option>Kenya Airways</option>
+              <option>Jambojet</option>
+              <option>Safarilink</option>
+              <option>Coastal Aviation</option>
+            </select>
+          </label>
+
+          <label>
+            Check-in
+            <input id="b-date" type="date" required>
+          </label>
+
+          <label>
+            Days
+            <input id="b-days" type="number" min="1" value="3" required>
+          </label>
+
+          <label>
+            Hotel Category
+            <select id="b-hotel">
+              <option value="50">Budget — KES 50,000/night</option>
+              <option value="100">Comfort — KES 100,000/night</option>
+              <option value="200">Luxury — KES 200,000/night</option>
+            </select>
+          </label>
+
+          <div style="display:flex; gap:8px; margin-top:12px;">
+            <button type="button" class="btn primary" id="estimate-local">Estimate</button>
+            <button type="submit" class="btn ghost">Confirm</button>
+          </div>
+
+          <div id="local-estimate" style="margin-top:12px; display:none;">
+            <p id="local-summary" class="small-hint"></p>
+            <p class="small-hint"><strong>Total KES:</strong> <span id="local-total"></span></p>
+            <button type="button" class="btn" id="print-ticket">Print Ticket</button>
+          </div>
+
+          <div id="book-msg" class="small-hint"></div>
+        </form>
+      </aside>
+    </div>
+
+    <!-- hidden lightbox modal -->
+    <div id="lb" style="position:fixed; inset:0; display:none; place-items:center; z-index:9999; background:rgba(0,0,0,0.85)">
+      <div style="max-width:1100px; width:94%; position:relative;">
+        <button id="lb-close" style="position:absolute; right:12px; top:8px; background:rgba(255,255,255,0.06); border:none; color:#fff; padding:8px; border-radius:8px; cursor:pointer">✕</button>
+        <img id="lb-img" src="" alt="Large image" style="width:100%; height:auto; border-radius:10px; display:block" />
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year-place"></span> Tembea Kenya • Tembea, Taste, Treasure</small>
+  </footer>
+
+  <script>
+  (function(){
+    // page-specific defaults: replace placeholder values dynamically for each page copy
+    const PLACE = {
+      slug: 'place-template',              // filename slug
+      title: 'PLACE NAME',                 // display title
+      tagline: 'A short poetic tagline for this place.',
+      intro: 'This is a long, human-written intro paragraph about this place — highlights, heritage, activities, and why it is special.',
+      video: '../assets/videos/PLACE_VIDEO.mp4',
+      bestTime: 'Dec–Mar',
+      distance: 'Varies',
+      activities: 'Relax, explore, photograph'
+    };
+
+    // Fill page content
+    document.getElementById('place-name').textContent = PLACE.title;
+    document.getElementById('place-tagline').textContent = PLACE.tagline;
+    document.getElementById('place-intro').textContent = PLACE.intro;
+    document.getElementById('fact-best').textContent = 'Best time: ' + PLACE.bestTime;
+    document.getElementById('fact-distance').textContent = 'Distance from Nairobi: ' + PLACE.distance;
+    document.getElementById('fact-activities').textContent = 'Activities: ' + PLACE.activities;
+
+    // Set video src if exists
+    const videoEl = document.querySelector('#bg-video source');
+    if(videoEl && PLACE.video) {
+      videoEl.src = PLACE.video;
+      videoEl.parentElement.load();
+    }
+
+    // prefill destination input from querystring or PLACE.title
+    const url = new URL(location.href);
+    const qsDest = url.searchParams.get('destination');
+    const destVal = qsDest ? decodeURIComponent(qsDest) : PLACE.title;
+    const destInput = document.getElementById('b-destination');
+    destInput.value = destVal;
+
+    // gallery lightbox
+    const gallery = document.getElementById('place-gallery');
+    const lb = document.getElementById('lb');
+    const lbImg = document.getElementById('lb-img');
+    gallery.querySelectorAll('img').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.dataset.full || img.src;
+        lb.style.display = 'grid';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    document.getElementById('lb-close').addEventListener('click', ()=> {
+      lb.style.display = 'none';
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    });
+    lb.addEventListener('click', (e) => { if(e.target === lb) { lb.style.display = 'none'; lbImg.src = ''; document.body.style.overflow = ''; } });
+
+    // booking logic (mirrors main booking flow but local to page)
+    const bookingsKey = 'km_bookings';
+    const pointsKey = 'km_points';
+
+    function getBookings(){ return JSON.parse(localStorage.getItem(bookingsKey) || '[]'); }
+    function saveBooking(b){ const arr = getBookings(); arr.push(b); localStorage.setItem(bookingsKey, JSON.stringify(arr)); }
+    function getPoints(){ return Number(localStorage.getItem(pointsKey) || '0'); }
+    function setPoints(n){ localStorage.setItem(pointsKey, String(n)); }
+
+    // estimate calc (simple model, adjust as needed)
+    const btnEstimate = document.getElementById('estimate-local');
+    const btnPrint = document.getElementById('print-ticket');
+    const localEstimate = document.getElementById('local-estimate');
+    const localTotal = document.getElementById('local-total');
+    const localSummary = document.getElementById('local-summary');
+    const bookForm = document.getElementById('local-booking-form');
+    const bookMsg = document.getElementById('book-msg');
+
+    function calcTotal() {
+      const baseFlight = 15000;
+      const hotelRate = Number(document.getElementById('b-hotel').value) * 1000; // e.g. 50 => 50k
+      const nights = Math.max(1, Number(document.getElementById('b-days').value || 1));
+      const subtotal = baseFlight + hotelRate * nights;
+      // small modifier for "remote" places
+      const modifier = PLACE.title.toLowerCase().includes('samburu') ? 1.12 : 1.0;
+      return Math.round(subtotal * modifier);
+    }
+
+    btnEstimate.addEventListener('click', () => {
+      const tot = calcTotal();
+      localTotal.textContent = tot.toLocaleString();
+      localSummary.textContent = `${destInput.value} • ${document.getElementById('b-days').value} night(s) • Airline: ${document.getElementById('b-airline').value}`;
+      localEstimate.style.display = 'block';
+    });
+
+    // print ticket: build a small html and open window.print
+    btnPrint.addEventListener('click', () => {
+      const ticketHtml = `
+        <html><head><title>Booking Ticket</title></head><body>
+          <h2>Tembea Kenya — Booking Ticket</h2>
+          <p><strong>Destination:</strong> ${destInput.value}</p>
+          <p><strong>Arrival Airport:</strong> ${document.getElementById('b-airport').value}</p>
+          <p><strong>Check-in:</strong> ${document.getElementById('b-date').value}</p>
+          <p><strong>Days:</strong> ${document.getElementById('b-days').value}</p>
+          <p><strong>Hotel:</strong> ${document.getElementById('b-hotel').options[document.getElementById('b-hotel').selectedIndex].text}</p>
+          <p><strong>Total (KES):</strong> ${localTotal.textContent}</p>
+          <p>Booking ID: BK${Date.now()}</p>
+        </body></html>`;
+      const w = window.open('', '_blank');
+      w.document.write(ticketHtml);
+      w.document.close();
+      w.print();
+    });
+
+    // confirm booking: save to localStorage and award points
+    bookForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // basic validation
+      const date = document.getElementById('b-date').value;
+      if(!date){ bookMsg.textContent = 'Please choose your check-in date.'; return; }
+      const total = calcTotal();
+      const booking = {
+        id: 'BK' + Date.now(),
+        destination: destInput.value,
+        date,
+        days: Number(document.getElementById('b-days').value),
+        airline: document.getElementById('b-airline').value,
+        airport: document.getElementById('b-airport').value,
+        hotel: document.getElementById('b-hotel').options[document.getElementById('b-hotel').selectedIndex].text,
+        total
+      };
+      saveBooking(booking);
+      // points: 1 pt per 1000 KES, min 10 pts
+      const pts = Math.max(10, Math.round(total / 1000));
+      setPoints(getPoints() + pts);
+      bookMsg.textContent = `Booking confirmed (demo). You earned ${pts} points!`;
+      // show estimate panel if hidden
+      localTotal.textContent = total.toLocaleString();
+      localEstimate.style.display = 'block';
+      // scroll to messages to show success
+      bookForm.scrollIntoView({behavior:'smooth', block:'center'});
+      // optional small confetti or badge animation here
+    });
+
+    // set footer year
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = new Date().getFullYear();
+      document.getElementById('year-place').textContent = y;
+    });
+
+    // accessibility: keyboard open gallery
+    document.getElementById('open-gallery-btn').addEventListener('click', ()=> {
+      const firstImg = gallery.querySelector('img');
+      if(firstImg){ firstImg.click(); }
+    });
+
+  })();
+  </script>
+</body>
+</html>

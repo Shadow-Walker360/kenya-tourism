@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kenya Majestic — Welcome</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Background video (replace with local file in media/videos/) -->
+  <div class="video-stack" aria-hidden="true">
+    <video id="bg-video" class="bg" autoplay muted loop playsinline>
+      <source src="media/videos/kenya.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-overlay"></div>
+
+  <header class="site-header">
+    <div class="nav-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Flag_of_Kenya.svg" alt="Kenya flag" class="flag-icon">
+      <a class="brand" href="index.html">Kenya Majestic</a>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <input id="nav-search" placeholder="Search places (e.g. Diani)" />
+      <ul>
+        <li><a href="index.html" data-video="kenya.mp4">Home</a></li>
+        <li><a href="places.html" data-video="savannah.mp4">Places</a></li>
+        <li><a href="booking.html" data-video="hills.mp4">Book</a></li>
+        <li><a href="rewards.html" data-video="coast.mp4">Rewards</a></li>
+        <li><a href="contact.html" data-video="coast.mp4">Contact</a></li>
+      </ul>
+      <button id="audio-toggle" aria-label="toggle music" title="Toggle ambient music">🔊</button>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">MAGICAL KENYA</h1>
+      <p class="hero-sub">Where the plains breathe, the mountains whisper, and the ocean hums. Explore cinematic destinations — book, collect rewards, and share the journey.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="places.html">Explore Places</a>
+        <a class="btn ghost" href="booking.html">Quick Book</a>
+      </div>
+      <div class="mini-stats">
+        <div><strong id="stat-places">10+</strong><span>Destinations</span></div>
+        <div><strong id="stat-days">365</strong><span>Seasons</span></div>
+        <div><strong id="stat-guides">50+</strong><span>Guides</span></div>
+      </div>
+    </div>
+  </main>
+
+  <section class="features">
+    <div class="feature-grid">
+      <article>
+        <h3>Immersive Videos</h3>
+        <p>Each page has its own cinematic background — swap scenes smoothly while you navigate.</p>
+      </article>
+      <article>
+        <h3>Booking Engine</h3>
+        <p>Pick destination, airline, hotel, and dates. Price estimate and booking ticket generated (client-side).</p>
+      </article>
+      <article>
+        <h3>Rewards</h3>
+        <p>Every successful booking gives points you can redeem for souvenirs or discounts (demo system).</p>
+      </article>
+      <article>
+        <h3>Gallery & Place Pages</h3>
+        <p>Detailed pages per place with 10+ images, local facts, and videos (images are hotlinked from the web).</p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Kenya Majestic . Built with respect to the people & nature of Kenya.</small>
+  </footer>
+
+  <!-- Ambient music (replace with your mp3 later in media/audio/) -->
+  <audio id="bg-audio" loop>
+    <source src="media/audio/ambient.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

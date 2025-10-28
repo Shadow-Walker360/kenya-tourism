@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diani Beach | Kenya Tourism</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(5px);
+      z-index: 100;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 1.8em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ccff;
+    }
+
+    video.bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.6);
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 100px 50px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .intro {
+      max-width: 850px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+
+    .intro h2 {
+      font-size: 3em;
+      color: #00ccff;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden-gem {
+      margin-top: 50px;
+      background: rgba(0,0,0,0.6);
+      padding: 25px;
+      border-radius: 15px;
+      font-size: 1.1em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    button.book {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #00ccff, #0066ff);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button.book:hover {
+      background: linear-gradient(90deg, #0099cc, #0055cc);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop class="bg">
+    <source src="../videos/diani.mp4" type="video/mp4" />
+  </video>
+
+  <header>
+    <h1>Kenya Tourism</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../culture.html">Culture</a>
+      <a href="../tourism.html" class="active">Tourism</a>
+    </nav>
+  </header>
+
+  <section>
+    <div class="intro">
+      <h2>Diani Beach</h2>
+      <p>
+        Welcome to **Diani Beach**, where the ocean’s whispers meet the soul of Swahili paradise.  
+        Powdery white sands stretch endlessly, turquoise waters shimmer beneath the sun,  
+        and coconut palms sway like they’ve known music since birth.  
+      </p>
+      <p>
+        Whether you’re diving among coral gardens, kitesurfing through sea breeze,  
+        or dining barefoot under starlight — Diani is Kenya’s coastal love letter to the world.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1576828831022-9f1e3e2b8a2c" alt="Diani Beach sunset" />
+      <img src="https://images.unsplash.com/photo-1602459022114-2a0c416b3e91" alt="White sands Diani" />
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Ocean waves Diani" />
+      <img src="https://images.unsplash.com/photo-1591035897819-67e4b176a5a8" alt="Boats on Diani Beach" />
+      <img src="https://images.unsplash.com/photo-1577262459719-75bbdf9e4a3b" alt="Palm trees Diani" />
+      <img src="https://images.unsplash.com/photo-1519817650390-64a93db511aa" alt="Underwater coral Diani" />
+      <img src="https://images.unsplash.com/photo-1590424893480-d74b2b9e0e2b" alt="Diani coast aerial" />
+      <img src="https://images.unsplash.com/photo-1596464716120-60b8c43709e8" alt="Starry night Diani" />
+      <img src="https://images.unsplash.com/photo-1590935217233-bb7dcf6e9d44" alt="Tropical vibe Diani" />
+      <img src="https://images.unsplash.com/photo-1575320181289-15d828f2ed94" alt="Beachfront resort Diani" />
+    </div>
+
+    <div class="hidden-gem">
+      <h3>Hidden Gem: Galu Kinondo Marine Reserve 🪸</h3>
+      <p>
+        Just south of Diani lies a secret — Galu Kinondo.  
+        A marine sanctuary untouched by crowds, where sea turtles glide through coral kingdoms.  
+        Local fishermen sing at dawn, and mangroves dance with the tide.  
+        It’s Diani’s quiet masterpiece — nature’s luxury without walls.
+      </p>
+    </div>
+
+    <button class="book" onclick="window.location.href='../booking.html'">Book Your Visit</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Kenya Tourism Board | Crafted with ❤️ from the Coastline of Dreams</p>
+  </footer>
+</body>
+</html>

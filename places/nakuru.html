@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lake Nakuru National Park - The Pink Heart of Kenya</title>
+  <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+</head>
+<body>
+  <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1603052870990-9d15f9c7a64f?auto=format&fit=crop&w=1400&q=80');">
+    <div class="overlay"></div>
+    <h1>Lake Nakuru National Park</h1>
+    <p>The Pink Heart of Kenya</p>
+  </header>
+
+  <section class="intro">
+    <h2>Welcome to Lake Nakuru</h2>
+    <p>
+      Nestled in the heart of Kenya’s Great Rift Valley, <strong>Lake Nakuru</strong> is a breathtaking alkaline lake famous for its endless flocks of pink flamingos and diverse wildlife.  
+      This UNESCO World Heritage site offers more than just beauty — it’s a sanctuary of hope, rebirth, and unspoiled wonder.
+    </p>
+    <p>
+      The park, though small, is teeming with life. From graceful rhinos to lounging lions, to the ever-curious baboons, Lake Nakuru is the perfect mix of calm and wild — a place where the skies shimmer pink at sunrise, and the water mirrors the soul of Africa.
+    </p>
+  </section>
+
+  <section class="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="photo-grid">
+      <img src="https://images.unsplash.com/photo-1610276329825-61bfe9d5934e?auto=format&fit=crop&w=800&q=80" alt="Flamingos at Lake Nakuru" />
+      <img src="https://images.unsplash.com/photo-1604503466501-c2f9f6a46c7e?auto=format&fit=crop&w=800&q=80" alt="White rhinos" />
+      <img src="https://images.unsplash.com/photo-1590070003839-efdc0a10c49e?auto=format&fit=crop&w=800&q=80" alt="Lake Nakuru sunset" />
+      <img src="https://images.unsplash.com/photo-1622908024640-8c3bba1af935?auto=format&fit=crop&w=800&q=80" alt="Waterbuck grazing" />
+      <img src="https://images.unsplash.com/photo-1574944981263-293c897a22b0?auto=format&fit=crop&w=800&q=80" alt="Lion in Lake Nakuru Park" />
+      <img src="https://images.unsplash.com/photo-1585241645927-fb38fda7bc62?auto=format&fit=crop&w=800&q=80" alt="Flamingo reflections" />
+    </div>
+  </section>
+
+  <section class="things-to-do">
+    <h2>Things to Do at Lake Nakuru</h2>
+    <ul>
+      <li><strong>Bird Watching:</strong> Witness millions of flamingos paint the lake pink — one of nature’s grandest spectacles.</li>
+      <li><strong>Game Drive:</strong> Spot rhinos, lions, giraffes, and the elusive leopard along scenic tracks.</li>
+      <li><strong>Viewpoints:</strong> Visit Baboon Cliff and Lion Hill for panoramic views of the lake and surrounding escarpments.</li>
+      <li><strong>Photography:</strong> Capture dawn’s golden light over the lake — it’s Instagram gold, no filter needed.</li>
+      <li><strong>Picnics:</strong> Enjoy a peaceful picnic surrounded by pelicans, zebras, and gentle breezes.</li>
+    </ul>
+  </section>
+
+  <section class="fun-facts">
+    <h2>Fun Facts About Lake Nakuru</h2>
+    <ul>
+      <li>🦩 Over <strong>1 million flamingos</strong> have been recorded at once — it looks like the water’s wearing a pink coat!</li>
+      <li>🌋 Lake Nakuru was formed by ancient volcanic activity in the Rift Valley millions of years ago.</li>
+      <li>🦏 It’s one of Kenya’s top <strong>rhino sanctuaries</strong>, with both black and white rhinos thriving here.</li>
+      <li>💧 The lake’s high alkalinity supports microscopic algae — flamingos’ favorite snack.</li>
+      <li>🎥 Lake Nakuru has featured in several wildlife documentaries, including BBC’s “Africa” series.</li>
+      <li>🌅 At sunrise, the water literally glows — locals call it *“The Lake That Wears the Sun.”*</li>
+    </ul>
+  </section>
+
+  <section class="hidden-gems">
+    <h2>Hidden Gems Around Nakuru</h2>
+    <p>
+      💎 *Menengai Crater* — one of the world’s largest volcanic calderas, offering epic hikes and views.  
+      💎 *Hyrax Hill Museum* — ancient archaeological sites revealing prehistoric human life.  
+      💎 *Kariandusi Caves* — home to some of the earliest stone tools ever found in Africa.
+    </p>
+  </section>
+
+  <section class="booking">
+    <h2>Plan Your Lake Nakuru Adventure</h2>
+    <form action="../booking.html" method="GET" class="booking-form">
+      <label for="days">Number of Days:</label>
+      <input type="number" id="days" name="days" min="1" max="14" placeholder="e.g., 3" required />
+
+      <label for="airport">Preferred Airport:</label>
+      <select id="airport" name="airport" required>
+        <option value="">Select an airport</option>
+        <option value="JKIA">Jomo Kenyatta International Airport (Nairobi)</option>
+        <option value="Nakuru">Nakuru Airstrip</option>
+        <option value="Wilson">Wilson Airport</option>
+      </select>
+
+      <label for="plane">Flight Option:</label>
+      <select id="plane" name="plane" required>
+        <option value="">Choose flight class</option>
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+        <option value="Private">Private Charter</option>
+      </select>
+
+      <label for="hotel">Preferred Stay:</label>
+      <select id="hotel" name="hotel">
+        <option value="sarova">Sarova Lion Hill Game Lodge</option>
+        <option value="lake-nakuru-lodge">Lake Nakuru Lodge</option>
+        <option value="flamingo-hill">Flamingo Hill Tented Camp</option>
+        <option value="mbweha-camp">Mbweha Camp</option>
+      </select>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>🇰🇪 Lake Nakuru National Park | The Pink Heart of the Rift Valley</p>
+  </footer>
+</body>
+</html>

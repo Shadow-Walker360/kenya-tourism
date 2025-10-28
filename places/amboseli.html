@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amboseli National Park | Kenya Tourism</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(5px);
+      z-index: 100;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 1.8em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00cc66;
+    }
+
+    video.bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.7);
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 100px 50px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+
+    .intro h2 {
+      font-size: 3em;
+      color: #00cc66;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    .hidden-gem {
+      margin-top: 40px;
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop class="bg">
+    <source src="../videos/amboseli.mp4" type="video/mp4" />
+  </video>
+
+  <header>
+    <h1>Kenya Tourism</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../culture.html">Culture</a>
+      <a href="../tourism.html" class="active">Tourism</a>
+    </nav>
+  </header>
+
+  <section>
+    <div class="intro">
+      <h2>Amboseli National Park</h2>
+      <p>
+        Welcome to Amboseli — the kingdom of elephants and the window to Mount Kilimanjaro.  
+        Here, you’ll find herds of majestic tuskers walking against the shimmering backdrop of Africa’s tallest mountain.  
+        Amboseli is not just a park; it’s a living painting where wildlife, wind, and wonder dance together.
+      </p>
+      <p>
+        Capture the sunrise as it burns through the morning mist.  
+        Watch Maasai herders guide their cattle in the golden hour.  
+        Every moment here whispers stories of Africa untamed.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1573134606400-df3fda6b3b20" alt="Amboseli Elephant" />
+      <img src="https://images.unsplash.com/photo-1599634035247-00dcfa1bcb50" alt="Kilimanjaro view" />
+      <img src="https://images.unsplash.com/photo-1526318472351-bc6a01c0d2d2" alt="Safari sunset" />
+      <img src="https://images.unsplash.com/photo-1516375199440-7f3e1a3e6c2b" alt="Maasai culture Amboseli" />
+      <img src="https://images.unsplash.com/photo-1600096238031-2ceebbe012d5" alt="Wildlife Amboseli" />
+      <img src="https://images.unsplash.com/photo-1564859227550-abe05d76b0cb" alt="Amboseli landscape" />
+    </div>
+
+    <div class="hidden-gem">
+      <h3>Hidden Gem: Enkongo Narok Swamp</h3>
+      <p>
+        While most visitors chase elephant herds, few know about the tranquil Enkongo Narok Swamp —  
+        a secret sanctuary where flamingos feed and hippos yawn in the soft morning light.  
+        It's Amboseli’s soul — calm, reflective, and deeply alive.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Kenya Tourism Board. Crafted with ❤️ for the Pride of Africa.</p>
+  </footer>
+</body>
+</html>

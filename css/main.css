@@ -1,0 +1,83 @@
+/* main.css — Kenya Majestic visual system */
+
+/* Colors inspired by the Kenyan flag */
+:root{
+  --kenya-black: #0b0b0b;
+  --kenya-red: #bb1919;
+  --kenya-green: #006400;
+  --kenya-white: #ffffff;
+  --gold: #ffce00;
+  --glass: rgba(0,0,0,0.45);
+  --maxw:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:var(--kenya-white);}
+a{color:inherit; text-decoration:none}
+
+/* background video helpers */
+.video-stack{position:fixed; inset:0; z-index:-100; pointer-events:none}
+video.bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.55) saturate(1.05); transition:opacity .9s ease}
+.video-overlay{position:fixed; inset:0; z-index:-90; background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.12)); pointer-events:none}
+
+/* header / nav */
+.site-header{position:fixed; top:12px; left:12px; right:12px; z-index:110; display:flex; justify-content:space-between; align-items:center; padding:10px 18px; border-radius:12px; backdrop-filter: blur(8px); background:linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.12)); box-shadow:0 12px 40px rgba(0,0,0,0.5);}
+.nav-left{display:flex; align-items:center; gap:12px}
+.brand{font-weight:800; letter-spacing:1px; color:var(--gold); font-size:1.05rem}
+.flag-icon{width:44px; height:28px; object-fit:cover; border-radius:4px; box-shadow:0 6px 18px rgba(0,0,0,0.5)}
+
+.site-nav ul{display:flex; gap:18px; list-style:none; margin:0}
+.site-nav a{padding:8px 10px; border-radius:8px; transition:all .25s ease; color:var(--kenya-white); font-weight:600}
+.site-nav a:hover{background:rgba(255,255,255,0.04); color:var(--gold); transform:translateY(-3px)}
+.site-nav input#nav-search{padding:8px 10px; border-radius:8px; border:none; background:rgba(255,255,255,0.03); color:#fff; margin-right:12px}
+
+/* hero */
+.hero{min-height:70vh; display:grid; place-items:center; text-align:center; padding:120px 20px 60px}
+.hero-inner{max-width:980px; background:linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.15)); padding:36px; border-radius:14px; box-shadow:0 30px 80px rgba(0,0,0,0.6); backdrop-filter:blur(6px)}
+.hero-title{font-size:clamp(32px,6vw,56px); margin:0 0 12px; letter-spacing:2px; color:var(--gold); text-shadow:0 6px 36px rgba(0,0,0,0.6)}
+.hero-sub{color:rgba(255,255,255,0.9); font-size:1.05rem; margin-bottom:18px}
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+.btn{display:inline-block; padding:10px 16px; border-radius:10px; font-weight:700; cursor:pointer; border:none}
+.btn.primary{background:linear-gradient(90deg,var(--kenya-red),var(--gold)); color:#000}
+.btn.ghost{background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.08)}
+
+/* features */
+.features{padding:40px 20px; display:flex; justify-content:center}
+.feature-grid{max-width:var(--maxw); display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px}
+.feature-grid article{background:var(--glass); padding:18px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.03)}
+
+/* content & cards */
+.content{max-width:var(--maxw); margin:40px auto; padding:20px}
+.cards-grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{display:block; border-radius:12px; overflow:hidden; color:#fff; background:rgba(0,0,0,0.2); box-shadow:0 12px 36px rgba(0,0,0,0.5); text-decoration:none}
+.card img{width:100%; height:220px; object-fit:cover; display:block}
+.card-meta{padding:12px}
+
+/* place page specifics */
+.place-page .place-grid{display:grid; gap:20px; grid-template-columns: 1fr 1fr}
+.place-page .gallery{display:grid; gap:10px; grid-template-columns:repeat(2,1fr)}
+.place-page .gallery img{width:100%; height:160px; object-fit:cover; border-radius:8px}
+
+/* booking */
+.booking-form{display:grid; gap:12px; max-width:720px}
+.booking-form label{display:block; font-weight:600}
+.calc-row{display:flex; gap:12px; margin-top:10px}
+.estimate-box{background:rgba(255,255,255,0.03); padding:12px; border-radius:8px; margin-top:12px}
+.bookings-list{margin-top:18px}
+
+/* rewards */
+.rewards-box{background:rgba(255,255,255,0.03); padding:18px; border-radius:10px}
+
+/* footer */
+.site-footer{position:fixed; bottom:12px; left:12px; right:12px; text-align:center; padding:8px; border-radius:10px; background:rgba(0,0,0,0.28); backdrop-filter:blur(6px)}
+
+/* responsive */
+@media (max-width:900px){
+  .site-nav ul{display:none}
+  .place-page .place-grid{grid-template-columns:1fr}
+  .place-page .gallery{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:480px){
+  .hero-inner{padding:20px}
+  .hero-title{font-size:28px}
+}

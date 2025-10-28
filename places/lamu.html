@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lamu Island — Tembea Kenya</title>
+  <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/booking.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/place-holders.js"></script>
+<script src="js/utils.js"></script>
+
+
+  <style>
+    /* Page-specific polish for Lamu */
+    .place-hero { padding:120px 18px 34px; text-align:center; color:#fff; }
+    .place-hero h1 { font-size:clamp(28px,5vw,48px); margin:0 0 8px; color:var(--gold); letter-spacing:1px; }
+    .place-tag { color:rgba(255,255,255,0.9); font-size:1.05rem; margin-bottom:8px; }
+    .place-grid{ max-width:1100px; margin:26px auto; display:grid; grid-template-columns:1fr 420px; gap:22px; padding:0 18px; align-items:start }
+    .place-info{ background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.28)); padding:20px; border-radius:12px; box-shadow:0 18px 48px rgba(0,0,0,0.5); }
+    .gallery{ display:grid; gap:10px; grid-template-columns: repeat(2,1fr); margin-top:12px; }
+    .gallery img{ width:100%; height:160px; object-fit:cover; border-radius:10px; cursor:pointer; transition:transform .28s ease; }
+    .gallery img:hover{ transform:scale(1.03); }
+    .facts { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .fact { background:rgba(255,255,255,0.03); padding:10px 12px; border-radius:10px; min-width:140px; text-align:center; }
+    .book-card{ position:relative; background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); padding:18px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.45); }
+    .btn.small{ padding:8px 12px; font-size:14px; border-radius:8px; }
+    .quote { font-style:italic; color:#cfe8f8; margin:12px 0 0 }
+    @media (max-width:980px){ .place-grid{ grid-template-columns:1fr } .gallery img{ height:140px } .book-card{ order:2 } }
+  </style>
+</head>
+<body>
+  <!-- Background video hero -->
+  <div class="video-stack" aria-hidden="true">
+    <video id="bg-video" class="bg" autoplay muted loop playsinline>
+      <source src="../assets/videos/lamu.mp4" type="video/mp4">
+      <!-- Replace with your local video if needed -->
+    </video>
+  </div>
+  <div class="video-overlay" aria-hidden="true"></div>
+
+  <!-- Header / Navbar -->
+  <header class="site-header" role="banner">
+    <div class="nav-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Flag_of_Kenya.svg" alt="Kenya flag" class="flag-icon">
+      <a class="brand" href="../index.html">Tembea Kenya</a>
+    </div>
+    <nav class="site-nav" role="navigation">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../tourism.html">Tourism</a></li>
+        <li><a href="../places.html" class="active">Places</a></li>
+        <li><a href="../booking.html">Book</a></li>
+        <li><a href="../rewards.html">Rewards</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="place-hero" role="region" aria-labelledby="place-name">
+      <h1 id="place-name">Lamu Island</h1>
+      <div class="place-tag">A coastal time capsule — dhows, coral verandas, and the slow poetry of Swahili days.</div>
+      <p class="quote">"Sway with the dhow sails at sunset — Lamu isn't just visited, it's remembered."</p>
+      <div style="margin-top:14px;">
+        <a class="btn primary" id="book-now" href="#book-section">Book a Lamu Escape</a>
+        <button class="btn ghost small" id="open-gallery">Open Gallery</button>
+      </div>
+    </section>
+
+    <!-- Content grid -->
+    <div class="place-grid">
+      <!-- Left: Info & Gallery -->
+      <div class="place-info" role="article">
+        <h2>About Lamu</h2>
+        <p>Lamu is a living museum — narrow lanes, coral-stone houses, ornate wooden doors, and the timeless rhythm of dhow life. It’s the essence of the Swahili coast: trade winds, centuries of culture, and an island tempo that asks you to slow down. This is where the ocean keeps secrets and the sunsets are ceremonious.</p>
+
+        <div class="facts" aria-hidden="false">
+          <div class="fact"><strong>Best time</strong><div>Jul–Oct, Dec–Mar</div></div>
+          <div class="fact"><strong>Access</strong><div>Fly to Mombasa; ferry or local flight to Lamu</div></div>
+          <div class="fact"><strong>Activities</strong><div>Dhow sails, heritage walks, snorkeling</div></div>
+        </div>
+
+        <h3 style="margin-top:14px">Why Lamu feels special</h3>
+        <p>Lamu’s World Heritage town transports you into a blend of Arabic, Persian, Indian and African influences. Craftspeople carve doors. Fishermen mend nets. When night falls, the alleyways glow with lanterns and taarab melodies drift from house to house.</p>
+
+        <h3 style="margin-top:14px">Gallery</h3>
+        <div class="gallery" id="place-gallery" aria-label="Lamu photos">
+          <!-- 12 curated images from public sources (Unsplash-style). Click to open lightbox -->
+          <img data-full="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60" alt="Lamu dhow at sunrise">
+          <img data-full="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=60" alt="Streets of Lamu Old Town">
+          <img data-full="https://images.unsplash.com/photo-1549887534-1f2d1d4f8f6e?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1549887534-1f2d1d4f8f6e?auto=format&fit=crop&w=800&q=60" alt="Swahili architecture detail">
+          <img data-full="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=60" alt="Local crafts and weaving">
+          <img data-full="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=60" alt="Beach at Lamu">
+          <img data-full="https://images.unsplash.com/photo-1526481280698-65d3d5f0b6f6?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1526481280698-65d3d5f0b6f6?auto=format&fit=crop&w=800&q=60" alt="Coral houses and doors">
+          <img data-full="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=800&q=60" alt="Dhow sails at dusk">
+          <img data-full="https://images.unsplash.com/photo-1529866006861-5f8c7f1a8a61?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1529866006861-5f8c7f1a8a61?auto=format&fit=crop&w=800&q=60" alt="Market life in Lamu">
+          <img data-full="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=60" alt="Seaside dining">
+          <img data-full="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=60" alt="Island alleyways">
+          <img data-full="https://images.unsplash.com/photo-1502789076709-2a1d6d9d6b4f?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1502789076709-2a1d6d9d6b4f?auto=format&fit=crop&w=800&q=60" alt="Swahili coffee & snacks">
+          <img data-full="https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=1500&q=80" src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=800&q=60" alt="Lamu dhow festival scene">
+        </div>
+
+        <h3 style="margin-top:14px">Map & Practical Info</h3>
+        <p class="small-hint">Island coordinates and quick travel tips — great for planning and for the Tourism office brief.</p>
+        <div style="border-radius:12px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.45); margin-top:10px;">
+          <iframe title="Lamu map" src="https://www.google.com/maps?q=Lamu%20Island%20Kenya&output=embed" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+        </div>
+
+        <p style="margin-top:12px">Hidden gem hint: wander past the main jetty at dawn and find quiet courtyards where fishermen mend nets and the scent of coconut and cloves hangs in the air.</p>
+      </div>
+
+      <!-- Right: Booking panel -->
+      <aside class="book-card" id="book-section" aria-labelledby="book-h">
+        <h3 id="book-h">Book Your Lamu Escape</h3>
+
+        <form id="local-booking-form" autocomplete="off" novalidate>
+          <label>
+            Destination
+            <input id="b-destination" type="text" readonly>
+          </label>
+
+          <label>
+            Arrival Airport
+            <select id="b-airport">
+              <option value="MBA">Mombasa (MBA)</option>
+              <option value="MYD">Malindi (MYD)</option>
+              <option value="LOP">Lamu (LAU)</option>
+            </select>
+          </label>
+
+          <label>
+            Airline
+            <select id="b-airline">
+              <option>Coastal Aviation</option>
+              <option>Kenya Airways</option>
+              <option>Safarilink</option>
+            </select>
+          </label>
+
+          <label>
+            Check-in
+            <input id="b-date" type="date" required>
+          </label>
+
+          <label>
+            Days
+            <input id="b-days" type="number" min="1" value="3" required>
+          </label>
+
+          <label>
+            Hotel Category
+            <select id="b-hotel">
+              <option value="50">Budget — KES 50,000/night</option>
+              <option value="100">Comfort — KES 100,000/night</option>
+              <option value="200">Luxury — KES 200,000/night</option>
+            </select>
+          </label>
+
+          <div style="display:flex; gap:8px; margin-top:12px;">
+            <button type="button" class="btn primary" id="estimate-local">Estimate</button>
+            <button type="submit" class="btn ghost">Confirm Booking</button>
+          </div>
+
+          <div id="local-estimate" style="margin-top:12px; display:none;">
+            <p id="local-summary" class="small-hint"></p>
+            <p class="small-hint"><strong>Total KES:</strong> <span id="local-total"></span></p>
+            <button type="button" class="btn" id="print-ticket">Print Ticket</button>
+          </div>
+
+          <div id="book-msg" class="small-hint" style="margin-top:10px"></div>
+        </form>
+
+        <div style="margin-top:14px">
+          <small class="small-hint">Book securely — this demo stores bookings locally for presentation. Replace with a real backend for production.</small>
+        </div>
+      </aside>
+    </div>
+
+    <!-- lightbox modal -->
+    <div id="lb" style="position:fixed; inset:0; display:none; place-items:center; z-index:9999; background:rgba(0,0,0,0.88)">
+      <div style="max-width:1100px; width:94%; position:relative;">
+        <button id="lb-close" style="position:absolute; right:12px; top:8px; background:rgba(255,255,255,0.06); border:none; color:#fff; padding:8px; border-radius:8px; cursor:pointer">✕</button>
+        <img id="lb-img" src="" alt="Large image" style="width:100%; height:auto; border-radius:10px; display:block" />
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year-place"></span> Tembea Kenya • Tembea, Taste, Treasure</small>
+  </footer>
+
+  <!-- Page-specific script (uses same booking & storage approach as main template) -->
+  <script>
+  (function(){
+    // Lamu-specific content object
+    const PLACE = {
+      slug: 'lamu',
+      title: 'Lamu Island',
+      tagline: 'A coastal time capsule — dhows, coral verandas, and the slow poetry of Swahili days.',
+      intro: 'Lamu is a living museum of Swahili architecture and hospitality. Narrow lanes open to sea breezes; coral-stone houses keep centuries of stories. Cultural festivals, dhow sails and quiet beaches make Lamu a gentle, unforgettable escape.',
+      video: '../assets/videos/lamu.mp4',
+      bestTime: 'Jul–Oct, Dec–Mar',
+      distance: 'Fly from Nairobi (1–1.5 hours + transfer)',
+      activities: 'Dhow sails, heritage walks, snorkeling, cultural tours'
+    };
+
+    // Fill page content
+    document.getElementById('place-name').textContent = PLACE.title;
+    document.getElementById('place-tagline').textContent = PLACE.tagline;
+    document.getElementById('place-intro').textContent = PLACE.intro;
+    document.getElementById('fact-best').textContent = 'Best time: ' + PLACE.bestTime;
+    document.getElementById('fact-distance').textContent = 'Distance from Nairobi: ' + PLACE.distance;
+    document.getElementById('fact-activities').textContent = 'Activities: ' + PLACE.activities;
+
+    // Set video src if applicable
+    const videoSource = document.querySelector('#bg-video source');
+    if(videoSource && PLACE.video){
+      videoSource.src = PLACE.video;
+      videoSource.parentElement.load();
+    }
+
+    // Set footer year
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const y = new Date().getFullYear();
+      document.getElementById('year-place').textContent = y;
+    });
+
+    // Prefill booking destination from querystring or PLACE.title
+    const url = new URL(location.href);
+    const qsDest = url.searchParams.get('destination');
+    const destVal = qsDest ? decodeURIComponent(qsDest) : PLACE.title;
+    const destInput = document.getElementById('b-destination');
+    destInput.value = destVal;
+
+    // Lightbox
+    const gallery = document.getElementById('place-gallery');
+    const lb = document.getElementById('lb');
+    const lbImg = document.getElementById('lb-img');
+    gallery.querySelectorAll('img').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.dataset.full || img.src;
+        lb.style.display = 'grid';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    document.getElementById('lb-close').addEventListener('click', ()=> {
+      lb.style.display = 'none';
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    });
+    lb.addEventListener('click', (e) => { if(e.target === lb) { lb.style.display = 'none'; lbImg.src = ''; document.body.style.overflow = ''; } });
+
+    // Booking local logic (mirror of main booking)
+    const bookingsKey = 'km_bookings';
+    const pointsKey = 'km_points';
+    function getBookings(){ return JSON.parse(localStorage.getItem(bookingsKey) || '[]'); }
+    function saveBooking(b){ const arr = getBookings(); arr.push(b); localStorage.setItem(bookingsKey, JSON.stringify(arr)); }
+    function getPoints(){ return Number(localStorage.getItem(pointsKey) || '0'); }
+    function setPoints(n){ localStorage.setItem(pointsKey, String(n)); }
+
+    // Estimate & print
+    const btnEstimate = document.getElementById('estimate-local');
+    const btnPrint = document.getElementById('print-ticket');
+    const localEstimate = document.getElementById('local-estimate');
+    const localTotal = document.getElementById('local-total');
+    const localSummary = document.getElementById('local-summary');
+    const bookForm = document.getElementById('local-booking-form');
+    const bookMsg = document.getElementById('book-msg');
+
+    function calcTotal() {
+      const baseFlight = 15000; // example baseline
+      const hotelRate = Number(document.getElementById('b-hotel').value) * 1000;
+      const nights = Math.max(1, Number(document.getElementById('b-days').value || 1));
+      // Lamu premium for island logistics
+      const modifier = 1.12;
+      return Math.round((baseFlight + (hotelRate * nights)) * modifier);
+    }
+
+    btnEstimate.addEventListener('click', () => {
+      const tot = calcTotal();
+      localTotal.textContent = tot.toLocaleString();
+      localSummary.textContent = `${destInput.value} • ${document.getElementById('b-days').value} night(s) • Airline: ${document.getElementById('b-airline').value}`;
+      localEstimate.style.display = 'block';
+    });
+
+    btnPrint.addEventListener('click', () => {
+      const ticketHtml = `
+        <html><head><title>Booking: ${destInput.value}</title></head><body style="font-family:system-ui,Arial,sans-serif;padding:18px">
+          <h2>Tembea Kenya — Booking Ticket</h2>
+          <p><strong>Destination:</strong> ${destInput.value}</p>
+          <p><strong>Arrival Airport:</strong> ${document.getElementById('b-airport').value}</p>
+          <p><strong>Check-in:</strong> ${document.getElementById('b-date').value}</p>
+          <p><strong>Days:</strong> ${document.getElementById('b-days').value}</p>
+          <p><strong>Hotel:</strong> ${document.getElementById('b-hotel').options[document.getElementById('b-hotel').selectedIndex].text}</p>
+          <p><strong>Total (KES):</strong> ${localTotal.textContent}</p>
+          <p>Booking ID: BK${Date.now()}</p>
+          <p style="margin-top:18px;font-size:13px;color:#666">Demo ticket: store this for reference. For production, integrate a secure backend and payment gateway.</p>
+        </body></html>`;
+      const w = window.open('', '_blank');
+      w.document.write(ticketHtml);
+      w.document.close();
+      w.print();
+    });
+
+    bookForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const date = document.getElementById('b-date').value;
+      if(!date){ bookMsg.textContent = 'Please choose a check-in date.'; return; }
+      const total = calcTotal();
+      const booking = {
+        id: 'BK' + Date.now(),
+        destination: destInput.value,
+        date,
+        days: Number(document.getElementById('b-days').value),
+        airline: document.getElementById('b-airline').value,
+        airport: document.getElementById('b-airport').value,
+        hotel: document.getElementById('b-hotel').options[document.getElementById('b-hotel').selectedIndex].text,
+        total
+      };
+      saveBooking(booking);
+      const pts = Math.max(10, Math.round(total / 1000));
+      setPoints(getPoints() + pts);
+      bookMsg.textContent = `Booking saved (demo). You earned ${pts} points!`;
+      localTotal.textContent = total.toLocaleString();
+      localEstimate.style.display = 'block';
+      bookForm.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+
+    // open gallery via button
+    document.getElementById('open-gallery').addEventListener('click', ()=> {
+      const first = document.querySelector('#place-gallery img');
+      if(first) first.click();
+    });
+
+    // small accessibility: trap focus on lightbox if open (minimal)
+    document.addEventListener('keydown', (e)=> {
+      if(e.key === 'Escape' && lb.style.display === 'grid'){ lb.style.display = 'none'; lbImg.src=''; document.body.style.overflow=''; }
+    });
+
+  })();
+  </script>
+</body>
+</html>
