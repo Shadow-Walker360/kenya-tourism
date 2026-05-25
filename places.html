@@ -6,6 +6,12 @@
   <title>Explore Destinations — Kenya Majestic</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/places.css">
+  <link rel="stylesheet" href="css/features.css">
+  <!-- VR Library -->
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+  <!-- Chart.js for Conservation -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="video-stack">
@@ -27,6 +33,7 @@
         <li><a href="booking.html">Book</a></li>
         <li><a href="rewards.html">Rewards</a></li>
       </ul>
+      <button id="audio-toggle" aria-label="toggle music" title="Toggle ambient music">🔊</button>
     </nav>
   </header>
 
@@ -166,7 +173,13 @@
     <small>© <span id="year-places"></span> Kenya Majestic — Tembea, Taste, Treasure</small>
   </footer>
 
+  <!-- Ambient music -->
+  <audio id="bg-audio" loop>
+    <source src="media/audio/ambient.mp3" type="audio/mpeg">
+  </audio>
+
   <script src="js/main.js"></script>
+  <script src="js/features.js"></script>
   <script>
     // Filter functionality
     document.querySelectorAll('.filter-btn').forEach(btn => {
