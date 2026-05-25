@@ -1,1 +1,30 @@
-Nothing needs to be added to .gitignore since the changes only include HTML files, image files (which should not be ignored), and no build artifacts, dependencies, or temporary files that would require ignoring.
+```
+# Video files
+*.mp4
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Editors
+.vscode/
+.idea/
+
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Build artifacts
+dist/
+build/
+target/
+```
