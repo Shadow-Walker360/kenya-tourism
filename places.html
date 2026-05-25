@@ -3,19 +3,125 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Places to Visit — Kenya Majestic</title>
+  <title>Explore Destinations — Kenya Majestic</title>
   <link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/landing.css">
-<link rel="stylesheet" href="css/gallery.css">
-<link rel="stylesheet" href="css/booking.css">
-<link rel="stylesheet" href="css/responsive.css">
-<script src="js/main.js"></script>
-<script src="js/booking.js"></script>
-<script src="js/gallery.js"></script>
-<script src="js/place-holders.js"></script>
-<script src="js/utils.js"></script>
-
-
+  <style>
+    /* Enhanced destinations page styles */
+    .destinations-hero {
+      text-align: center;
+      padding: 140px 20px 60px;
+    }
+    
+    .destinations-hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      color: var(--gold);
+      margin-bottom: 16px;
+      text-shadow: 0 6px 30px rgba(0,0,0,0.6);
+    }
+    
+    .destinations-hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.9);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .cards-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .card {
+      display: block;
+      border-radius: 16px;
+      overflow: hidden;
+      color: #fff;
+      background: rgba(0,0,0,0.3);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      text-decoration: none;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 80px rgba(255, 206, 0, 0.3);
+    }
+    
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    
+    .card:hover img {
+      transform: scale(1.1);
+    }
+    
+    .card-meta {
+      padding: 20px;
+      position: relative;
+    }
+    
+    .card-meta h4 {
+      font-size: 22px;
+      margin: 0 0 8px;
+      color: var(--gold);
+    }
+    
+    .card-meta p {
+      margin: 0;
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, var(--kenya-red), var(--gold));
+      color: #000;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+    
+    .filter-btn {
+      padding: 10px 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      background: transparent;
+      color: #fff;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+    
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+    }
+  </style>
 </head>
 <body>
   <div class="video-stack">
@@ -36,45 +142,186 @@
         <li><a href="places.html" class="active">Places</a></li>
         <li><a href="booking.html">Book</a></li>
         <li><a href="rewards.html">Rewards</a></li>
-        <li><a href="places/place-template.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="content">
-    <h1>Destinations</h1>
-    <p class="lead">Click a destination to open its page with a full gallery, facts, and a book button.</p>
+    <div class="destinations-hero">
+      <h1>Explore Kenya's Wonders</h1>
+      <p>Discover breathtaking destinations across Kenya — from wildlife-rich savannas to pristine coastal beaches, volcanic mountains to serene lakes.</p>
+    </div>
+    
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+      <button class="filter-btn" data-filter="beach">Beach</button>
+      <button class="filter-btn" data-filter="mountain">Mountain</button>
+      <button class="filter-btn" data-filter="lake">Lake</button>
+      <button class="filter-btn" data-filter="culture">Culture</button>
+    </div>
 
     <div class="cards-grid">
-      <!-- Each card links to a place page. Pages are in /places/ -->
-      <a class="card" href="places/diani.html" data-video="coast.mp4">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60" alt="Diani">
-        <div class="card-meta"><h4>Diani Beach</h4><p>Gold sand, turquoise water</p></div>
-      </a>
-
-      <a class="card" href="places/maasai-mara.html" data-video="savannah.mp4">
+      <!-- Maasai Mara -->
+      <a class="card" href="places/maasai-mara.html" data-video="savannah.mp4" data-category="wildlife">
+        <span class="card-badge">Most Popular</span>
         <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=60" alt="Maasai Mara">
-        <div class="card-meta"><h4>Maasai Mara</h4><p>Great Migration & wildlife</p></div>
+        <div class="card-meta">
+          <h4>Maasai Mara</h4>
+          <p>Witness the Great Migration, one of Earth's most spectacular natural events. Home to lions, elephants, and the iconic Maasai culture.</p>
+        </div>
       </a>
 
-      <a class="card" href="places/mount-kenya.html" data-video="mount.mp4">
+      <!-- Diani Beach -->
+      <a class="card" href="places/diani.html" data-video="coast.mp4" data-category="beach">
+        <span class="card-badge">Tropical Paradise</span>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60" alt="Diani Beach">
+        <div class="card-meta">
+          <h4>Diani Beach</h4>
+          <p>Pristine white sands meet turquoise waters. Perfect for snorkeling, kitesurfing, and relaxing under swaying palm trees.</p>
+        </div>
+      </a>
+
+      <!-- Amboseli -->
+      <a class="card" href="places/amboseli.html" data-video="wildlife.mp4" data-category="wildlife">
+        <img src="https://images.unsplash.com/photo-1516426122078-c2ff4e5cf48c?auto=format&fit=crop&w=1200&q=60" alt="Amboseli">
+        <div class="card-meta">
+          <h4>Amboseli National Park</h4>
+          <p>Famous for large elephant herds and stunning views of Mount Kilimanjaro. A photographer's dream destination.</p>
+        </div>
+      </a>
+
+      <!-- Mount Kenya -->
+      <a class="card" href="places/mount-kenya.html" data-video="mount.mp4" data-category="mountain">
+        <span class="card-badge">UNESCO Site</span>
         <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60" alt="Mount Kenya">
-        <div class="card-meta"><h4>Mount Kenya</h4><p>Alpine peaks & trekking</p></div>
+        <div class="card-meta">
+          <h4>Mount Kenya</h4>
+          <p>Africa's second-highest peak offering challenging treks through diverse ecosystems from rainforest to alpine peaks.</p>
+        </div>
       </a>
 
-      <a class="card" href="places/amboseli.html" data-video="wildlife.mp4">
-        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=60" alt="Amboseli">
-        <div class="card-meta"><h4>Amboseli</h4><p>Elephant herds & Kilimanjaro views</p></div>
+      <!-- Lake Nakuru -->
+      <a class="card" href="places/nakuru.html" data-video="lake.mp4" data-category="lake">
+        <img src="https://images.unsplash.com/photo-1534759846116-5799c33ce22a?auto=format&fit=crop&w=1200&q=60" alt="Lake Nakuru">
+        <div class="card-meta">
+          <h4>Lake Nakuru</h4>
+          <p>Famous for flamingos and rhino sanctuary. A haven for birdwatchers and wildlife enthusiasts alike.</p>
+        </div>
       </a>
 
-      <!-- add more cards similarly for Nakuru, Tsavo, Lamu, Samburu, Hells Gate -->
+      <!-- Tsavo -->
+      <a class="card" href="places/tsavo.html" data-video="savannah.mp4" data-category="wildlife">
+        <span class="card-badge">Largest Park</span>
+        <img src="https://images.unsplash.com/photo-1516426122078-c2ff4e5cf48c?auto=format&fit=crop&w=1200&q=60" alt="Tsavo">
+        <div class="card-meta">
+          <h4>Tsavo National Parks</h4>
+          <p>Kenya's largest wildlife sanctuary, split into East and West. Known for red elephants and dramatic landscapes.</p>
+        </div>
+      </a>
+
+      <!-- Lamu Island -->
+      <a class="card" href="places/lamu.html" data-video="coast.mp4" data-category="culture">
+        <span class="card-badge">UNESCO Heritage</span>
+        <img src="https://images.unsplash.com/photo-1589979481223-deb893043163?auto=format&fit=crop&w=1200&q=60" alt="Lamu">
+        <div class="card-meta">
+          <h4>Lamu Island</h4>
+          <p>A timeless Swahili settlement with narrow streets, ancient architecture, and donkey-powered transport.</p>
+        </div>
+      </a>
+
+      <!-- Samburu -->
+      <a class="card" href="places/samburu.html" data-video="savannah.mp4" data-category="wildlife">
+        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=1200&q=60" alt="Samburu">
+        <div class="card-meta">
+          <h4>Samburu Reserve</h4>
+          <p>Home to unique species like Grevy's zebra and reticulated giraffe. Experience authentic Samburu culture.</p>
+        </div>
+      </a>
+
+      <!-- Hell's Gate -->
+      <a class="card" href="places/hells-gate.html" data-video="hills.mp4" data-category="mountain">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60" alt="Hell's Gate">
+        <div class="card-meta">
+          <h4>Hell's Gate</h4>
+          <p>Dramatic cliffs, geothermal activity, and walking safaris. The inspiration for Disney's Pride Lands.</p>
+        </div>
+      </a>
+
+      <!-- Lake Naivasha -->
+      <a class="card" href="places/lake-naivasha.html" data-video="lake.mp4" data-category="lake">
+        <img src="https://images.unsplash.com/photo-1534759846116-5799c33ce22a?auto=format&fit=crop&w=1200&q=60" alt="Lake Naivasha">
+        <div class="card-meta">
+          <h4>Lake Naivasha</h4>
+          <p>Freshwater lake with hippos, eagles, and boat rides. Gateway to Crescent Island walking safari.</p>
+        </div>
+      </a>
+
+      <!-- Fort Jesus -->
+      <a class="card" href="places/fortjesus.html" data-video="coast.mp4" data-category="culture">
+        <span class="card-badge">Historic Site</span>
+        <img src="https://images.unsplash.com/photo-1589979481223-deb893043163?auto=format&fit=crop&w=1200&q=60" alt="Fort Jesus">
+        <div class="card-meta">
+          <h4>Fort Jesus, Mombasa</h4>
+          <p>16th-century Portuguese fort showcasing centuries of coastal history and cultural exchange.</p>
+        </div>
+      </a>
+
+      <!-- Lake Victoria -->
+      <a class="card" href="places/lake-victoria.html" data-video="lake.mp4" data-category="lake">
+        <img src="https://images.unsplash.com/photo-1534759846116-5799c33ce22a?auto=format&fit=crop&w=1200&q=60" alt="Lake Victoria">
+        <div class="card-meta">
+          <h4>Lake Victoria</h4>
+          <p>Africa's largest lake offering fishing, island hopping, and stunning sunsets over calm waters.</p>
+        </div>
+      </a>
     </div>
   </main>
 
   <footer class="site-footer">
-    <small>© <span id="year-places"></span> Kenya Majestic</small>
+    <small>© <span id="year-places"></span> Kenya Majestic — Tembea, Taste, Treasure</small>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.card').forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'block';
+            setTimeout(() => card.style.opacity = '1', 50);
+          } else {
+            card.style.opacity = '0';
+            setTimeout(() => card.style.display = 'none', 300);
+          }
+        });
+      });
+    });
+    
+    // Video swap on card hover
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const videoSrc = card.dataset.video;
+        if (videoSrc) {
+          const bgVideo = document.getElementById('bg-video');
+          const source = bgVideo.querySelector('source');
+          if (source && source.src !== `media/videos/${videoSrc}`) {
+            bgVideo.style.opacity = 0;
+            setTimeout(() => {
+              source.src = `media/videos/${videoSrc}`;
+              bgVideo.load();
+              bgVideo.play();
+              bgVideo.style.opacity = 1;
+            }, 700);
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
