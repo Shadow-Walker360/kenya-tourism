@@ -595,7 +595,7 @@ function initUGCGallery() {
    ============================================ */
 function initWhatsAppAgent() {
     const whatsappHTML = `
-        <a href="https://wa.me/254700000000?text=Habari! I'm interested in booking a safari to Kenya. Please help me plan my trip." 
+        <a href="https://wa.me/254799284824?text=Habari! I'm interested in booking a safari to Kenya. Please help me plan my trip." 
            class="whatsapp-float" target="_blank" rel="noopener">
             <i class="fab fa-whatsapp"></i>
             <span class="whatsapp-tooltip">Chat with us!</span>
