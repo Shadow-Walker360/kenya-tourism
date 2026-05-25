@@ -3,56 +3,492 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maasai Mara National Reserve | Kenya Tourism</title>
-  <link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/landing.css">
-<link rel="stylesheet" href="css/gallery.css">
-<link rel="stylesheet" href="css/booking.css">
-<link rel="stylesheet" href="css/responsive.css">
-<script src="js/main.js"></script>
-<script src="js/booking.js"></script>
-<script src="js/gallery.js"></script>
-<script src="js/place-holders.js"></script>
-<script src="js/utils.js"></script>
-
-
+  <title>Maasai Mara National Reserve | Kenya Majestic</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .destination-hero {
+      position: relative;
+      height: 60vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .destination-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 40px;
+    }
+    .destination-title {
+      font-size: clamp(36px, 6vw, 64px);
+      color: var(--gold);
+      margin: 0 0 16px;
+      text-shadow: 0 6px 30px rgba(0,0,0,0.8);
+    }
+    .destination-tagline {
+      font-size: 20px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      padding: 14px 36px;
+      background: linear-gradient(135deg, var(--gold), var(--kenya-red));
+      color: #000;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255, 206, 0, 0.5);
+    }
+    .btn-secondary {
+      padding: 14px 36px;
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .content-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .info-card {
+      background: rgba(0,0,0,0.4);
+      padding: 30px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+    }
+    .info-card h2 {
+      color: var(--gold);
+      margin-top: 0;
+      font-size: 28px;
+    }
+    .highlights-list {
+      list-style: none;
+      padding: 0;
+    }
+    .highlights-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      gap: 12px;
+      align-items: start;
+    }
+    .highlights-list li::before {
+      content: '🦁';
+      font-size: 20px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 30px;
+    }
+    .video-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      cursor: pointer;
+    }
+    .video-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+    }
+    .stats-row {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .stat-box {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      flex: 1;
+      min-width: 120px;
+    }
+    .stat-number {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+    }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      place-items: center;
+      z-index: 10000;
+    }
+    .modal-overlay.active {
+      display: grid;
+    }
+    .modal-content {
+      background: linear-gradient(180deg, rgba(30,30,30,0.98), rgba(20,20,20,0.98));
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    .booking-form {
+      display: grid;
+      gap: 16px;
+    }
+    .form-group label {
+      display: block;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      color: #fff;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .submit-btn {
+      padding: 16px;
+      background: linear-gradient(135deg, var(--gold), var(--kenya-red));
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .interest-prompt {
+      text-align: center;
+      padding: 30px;
+    }
+    .interest-prompt h3 {
+      color: var(--gold);
+    }
+    .interest-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .btn-yes {
+      padding: 12px 32px;
+      background: linear-gradient(135deg, var(--kenya-green), var(--gold));
+      color: #000;
+      border: none;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-no {
+      padding: 12px 32px;
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .gallery-preview img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    @media (max-width: 900px) {
+      .section-grid, .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body class="destination-page">
-  <header class="page-header">
-    <h1>Maasai Mara National Reserve</h1>
-    <p>"The Theatre of the Wild"</p>
+  <div class="video-stack">
+    <video id="bg-video" class="bg" autoplay muted loop playsinline>
+      <source src="../media/videos/savannah.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-overlay"></div>
+  
+  <header class="site-header">
+    <div class="nav-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Flag_of_Kenya.svg" alt="Kenya flag" class="flag-icon">
+      <a class="brand" href="../index.html">Kenya Majestic</a>
+    </div>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../places.html">Places</a></li>
+        <li><a href="../booking.html">Book</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <section class="intro">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Maasai_Mara_National_Reserve.jpg" alt="Maasai Mara National Reserve">
-    <p>
-      The Maasai Mara — Kenya’s crown jewel — is where Africa beats in full rhythm. Rolling savannas, endless herds of wildebeests,
-      and lions that rule the golden plains make it one of the most iconic wildlife destinations on Earth.
-      The reserve is named after the Maasai people and the Mara River that cuts through its heart.
-    </p>
+  
+  <section class="destination-hero">
+    <div class="hero-content">
+      <h1 class="destination-title">Maasai Mara National Reserve</h1>
+      <p class="destination-tagline">"The Theatre of the Wild" — Where Africa's greatest wildlife spectacle unfolds</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="openBookingModal()">Book This Adventure</button>
+        <a href="#explore" class="btn-secondary">Explore More</a>
+      </div>
+    </div>
   </section>
-
-  <section class="activities">
-    <h2>Things to Do</h2>
-    <ul>
-      <li>Witness the Great Migration — one of the “Seven New Wonders of the World.”</li>
-      <li>Take a sunrise hot air balloon safari over the sweeping plains.</li>
-      <li>Visit a traditional Maasai village to experience authentic culture and song.</li>
-      <li>Spot the “Big Five” — lions, elephants, buffalo, leopards, and rhinos — in one thrilling game drive.</li>
-    </ul>
-  </section>
-
-  <section class="fun-facts">
-    <h2>Fun Facts</h2>
-    <ul>
-      <li>Over 1.5 million wildebeests cross from Tanzania’s Serengeti to the Mara every year in search of greener pastures.</li>
-      <li>The reserve spans approximately 1,510 square kilometers and connects seamlessly to the Serengeti ecosystem.</li>
-      <li>The Maasai people’s bright red shukas are said to symbolize courage and ward off lions.</li>
-    </ul>
-  </section>
-
-  <footer>
-    <a href="../tourism.html">← Back to Destinations</a>
+  
+  <main class="content-section" id="explore">
+    <div class="section-grid">
+      <div class="info-card">
+        <h2>About Maasai Mara</h2>
+        <p>The Maasai Mara is Kenya's crown jewel where rolling savannas, endless herds of wildebeests, and lions rule the golden plains. Named after the Maasai people and the Mara River, this reserve offers an unparalleled safari experience.</p>
+        
+        <h3 style="color: var(--gold); margin-top: 30px;">What to Expect</h3>
+        <ul class="highlights-list">
+          <li>Witness the Great Migration — over 1.5 million wildebeest crossing</li>
+          <li>Spot the Big Five: lions, elephants, buffalo, leopards, rhinos</li>
+          <li>Hot air balloon safari at sunrise over the plains</li>
+          <li>Visit traditional Maasai villages</li>
+          <li>Sundowner drinks watching African sunsets</li>
+        </ul>
+        
+        <div class="stats-row">
+          <div class="stat-box">
+            <span class="stat-number">1,510</span>
+            <span class="stat-label">Sq Kilometers</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">Jul-Oct</span>
+            <span class="stat-label">Best Time</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Bird Species</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="info-card">
+        <h2>Experience Videos</h2>
+        <div class="video-grid">
+          <div class="video-item">
+            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=60" alt="Wildlife">
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="video-item">
+            <img src="https://images.unsplash.com/photo-1516426122078-c2ff4e5cf48c?auto=format&fit=crop&w=800&q=60" alt="Elephants">
+            <div class="play-icon">▶</div>
+          </div>
+        </div>
+        
+        <h3 style="color: var(--gold); margin-top: 30px;">Photo Gallery</h3>
+        <div class="gallery-preview">
+          <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=400&q=60" alt="Mara 1">
+          <img src="https://images.unsplash.com/photo-1516426122078-c2ff4e5cf48c?auto=format&fit=crop&w=400&q=60" alt="Mara 2">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=400&q=60" alt="Mara 3">
+        </div>
+        
+        <div style="margin-top: 30px; text-align: center;">
+          <button class="btn-primary" onclick="showInterestPrompt()" style="width: 100%;">Interested? Book Now!</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="info-card" style="margin-top: 40px;">
+      <h2>Fun Facts</h2>
+      <div class="section-grid" style="gap: 20px;">
+        <div>🦓 Over 1.5 million wildebeests cross annually from Serengeti</div>
+        <div>🗺️ Spans 1,510 sq km connecting to Serengeti ecosystem</div>
+        <div>🔴 Maasai red shukas symbolize courage and ward off lions</div>
+        <div>🦁 Home to one of Africa's highest lion densities</div>
+      </div>
+    </div>
+  </main>
+  
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeBookingModal()">×</button>
+      <h2 class="modal-title" style="color: var(--gold);">Book Your Safari</h2>
+      <form class="booking-form" onsubmit="handleBooking(event)">
+        <div class="form-group">
+          <label>Destination</label>
+          <input type="text" value="Maasai Mara National Reserve" readonly>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Check-in Date</label>
+            <input type="date" required>
+          </div>
+          <div class="form-group">
+            <label>Days</label>
+            <input type="number" min="1" value="3" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Guests</label>
+          <input type="number" min="1" value="2" required>
+        </div>
+        <div class="form-group">
+          <label>Accommodation</label>
+          <select>
+            <option value="budget">Budget Lodge (KES 50,000/night)</option>
+            <option value="comfort">Tented Camp (KES 100,000/night)</option>
+            <option value="luxury">Luxury Lodge (KES 200,000/night)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Airline</label>
+          <select>
+            <option>Kenya Airways</option>
+            <option>Jambojet</option>
+            <option>Safarilink</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Continue to Booking →</button>
+      </form>
+    </div>
+  </div>
+  
+  <div class="modal-overlay" id="interestModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeInterestModal()">×</button>
+      <div class="interest-prompt">
+        <h3>Ready for the Adventure?</h3>
+        <p>Experience Maasai Mara — where every sunset brings discoveries and every dawn promises adventure.</p>
+        <div class="interest-btns">
+          <button class="btn-yes" onclick="proceedToBooking()">Yes, I'm Interested!</button>
+          <button class="btn-no" onclick="closeInterestModal()">Not Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Kenya Majestic</small>
   </footer>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    function openBookingModal() {
+      document.getElementById('bookingModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function showInterestPrompt() {
+      document.getElementById('interestModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeInterestModal() {
+      document.getElementById('interestModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function proceedToBooking() {
+      closeInterestModal();
+      setTimeout(() => openBookingModal(), 300);
+    }
+    function handleBooking(e) {
+      e.preventDefault();
+      const booking = {
+        id: 'BK' + Date.now(),
+        destination: 'Maasai Mara',
+        date: e.target.querySelector('input[type="date"]').value,
+        days: e.target.querySelectorAll('input[type="number"]')[0].value,
+        guests: e.target.querySelectorAll('input[type="number"]')[1].value
+      };
+      const bookings = JSON.parse(localStorage.getItem('km_bookings') || '[]');
+      bookings.push(booking);
+      localStorage.setItem('km_bookings', JSON.stringify(bookings));
+      const points = parseInt(localStorage.getItem('km_points') || '0') + 100;
+      localStorage.setItem('km_points', points.toString());
+      alert('Booking saved! You earned 100 points.');
+      closeBookingModal();
+      window.location.href = '../booking.html';
+    }
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
